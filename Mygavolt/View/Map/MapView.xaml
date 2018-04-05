@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="Mygavolt.View.Map.MapView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mygavolt.View.Map"
+             xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+             mc:Ignorable="d" Height="437.091" Width="437.091">
+    <Grid>
+        <m:Map CredentialsProvider="AlxUxDzyNQUSo6z1wmTbghqdkI8_RKJwCuZv5kiBSwLBQk_tadFUhmXJ3ZIHwURT"/>
+    </Grid>
+</UserControl>

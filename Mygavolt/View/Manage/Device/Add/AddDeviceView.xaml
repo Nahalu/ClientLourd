@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="Mygavolt.View.Manage.Device.Add.AddDeviceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mygavolt.View.Manage.Device"
+             xmlns:ValidationRules="clr-namespace:Mygavolt.ValidationRules"
+             mc:Ignorable="d" Height="193.689" Width="241.484">
+    <!-- Pour ajouter un formulaire faire click droit sur Manage et ajouter controle utilisateur-->
+    <Grid>
+        <Label Content="Ajouter un matériel" HorizontalAlignment="Left" Margin="43,16,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="#FFB6B6B6" Height="29" Width="168"/>
+        <!-- Binder avec la fonction dans AddDeviceViewModel -->
+        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="150,151,0,0" VerticalAlignment="Top" Width="61" Command="{Binding AddDevice}" Height="18" />
+
+        <!-- Binder chaque box avec son nom (voir dans AddDeviceViewModel)-->
+        <Label Content="Label" HorizontalAlignment="Left" Margin="44,44,0,0" VerticalAlignment="Top" Height="24" Width="31"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="13,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MaxLength="50" Width="97" TextAlignment="Center">
+            <TextBox.Text>
+                <Binding Path="Label" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+        <Label Content="IMEI" HorizontalAlignment="Left" Margin="48,84,0,0" VerticalAlignment="Top" Height="24" Width="27"/>
+        <TextBox HorizontalAlignment="Left" Height="21" Margin="13,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" MaxLength="14" TextAlignment="Center">
+            <TextBox.Text>
+                <Binding Path="Imei" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+        <Label Content="System" HorizontalAlignment="Left" Margin="44,128,0,0" VerticalAlignment="Top" Height="23" Width="39"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="13,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" MaxLength="10" TextAlignment="Center">
+            <TextBox.Text>
+                <Binding Path="System" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+        <Label Content="Version" HorizontalAlignment="Left" Margin="159,50,0,0" VerticalAlignment="Top" Height="23" Width="39"/>
+        <TextBox HorizontalAlignment="Left" Height="21" Margin="128,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" MaxLength="10" TextAlignment="Center">
+            <TextBox.Text>
+                <Binding Path="Version" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+        <Label Content="MAC Adresse" HorizontalAlignment="Left" Margin="145,86,0,0" VerticalAlignment="Top" Height="23" Width="66"/>
+        <TextBox HorizontalAlignment="Left" Height="21" Margin="128,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" MaxLength="19" TextAlignment="Center">
+            <TextBox.Text>
+                <Binding Path="Mac_address" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+
+    </Grid>
+</UserControl>

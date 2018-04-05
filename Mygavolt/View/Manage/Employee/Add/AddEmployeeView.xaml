@@ -1,0 +1,333 @@
+﻿<UserControl x:Class="Mygavolt.View.Manage.Employee.Add.AddEmployeeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mygavolt.View.Manage.Employee"
+             xmlns:ValidationRules="clr-namespace:Mygavolt.ValidationRules"
+             mc:Ignorable="d" Height="770.811" Width="453.541">
+    <Grid >
+        <Grid Margin="0,0,0,408">
+            <Label Content="Ajouter un Employé" HorizontalAlignment="Left" Margin="14,10,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Roboto" Foreground="#FFB6B6B6"/>
+
+            <Label Content="Prénom" HorizontalAlignment="Left" Margin="66,44,0,0" VerticalAlignment="Top" FontFamily="Roboto" Foreground="#FFB6B6B6"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="27,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="75">
+                <TextBox.Text>
+                    <Binding Path="Firstname" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <!-- Placeholder for the TextBox itself -->
+                            <AdornedElementPlaceholder x:Name="textBox"/>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+            <Label Content="Nom" HorizontalAlignment="Left" Margin="70,95,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="27,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="75">
+                <TextBox.Text>
+                    <Binding Path="Lastname" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <!-- Placeholder for the TextBox itself -->
+                            <AdornedElementPlaceholder x:Name="textBox"/>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+            <Label Content="Email" HorizontalAlignment="Left" Margin="68,141,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="27,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="255">
+                <TextBox.Text>
+                    <Binding Path="Email" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <!-- Placeholder for the TextBox itself -->
+                            <AdornedElementPlaceholder x:Name="textBox"/>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+            <Label Content="Téléphone fixe" HorizontalAlignment="Left" Margin="46,190,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="27,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="15">
+                <TextBox.Text>
+                    <Binding Path="Phone" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <!-- Placeholder for the TextBox itself -->
+                            <AdornedElementPlaceholder x:Name="textBox"/>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+            <Label Content="Téléphone mobile" HorizontalAlignment="Left" Margin="34,239,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="27,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="15">
+                <TextBox.Text>
+                    <Binding Path="Mobile" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <!-- Placeholder for the TextBox itself -->
+                            <AdornedElementPlaceholder x:Name="textBox"/>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+            <Label Content="Date de naissance" HorizontalAlignment="Left" Margin="34,287,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <DatePicker SelectedDate="{Binding BirthDate}" Margin="27,313,291,436" />
+
+            <Label Content="Date début contrat" HorizontalAlignment="Left" Margin="190,44,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <DatePicker SelectedDate="{Binding ArrivalDate}" Margin="183,70,135,680" />
+
+
+            <Label Content="Nom de la voie" HorizontalAlignment="Left" Margin="196,96,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="185,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="255">
+                <TextBox.Text>
+                    <Binding Path="StreetName" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <!-- Placeholder for the TextBox itself -->
+                            <AdornedElementPlaceholder x:Name="textBox"/>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+            <Label Content="Numéro de la voie" HorizontalAlignment="Left" Margin="190,143,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="184,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="10">
+                <TextBox.Text>
+                    <Binding Path="StreetNumber" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <!-- Placeholder for the TextBox itself -->
+                            <AdornedElementPlaceholder x:Name="textBox"/>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+            <Label Content="Ville" HorizontalAlignment="Left" Margin="224,191,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="184,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="255">
+                <TextBox.Text>
+                    <Binding Path="City" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <!-- Placeholder for the TextBox itself -->
+                            <AdornedElementPlaceholder x:Name="textBox"/>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+            <Label Content="Pays" HorizontalAlignment="Left" Margin="225,239,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="184,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="50">
+                <TextBox.Text>
+                    <Binding Path="Country" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <!-- Placeholder for the TextBox itself -->
+                            <AdornedElementPlaceholder x:Name="textBox"/>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+            <Label Content="Code Postal" HorizontalAlignment="Left" Margin="207,286,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="183,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="50">
+                <TextBox.Text>
+                    <Binding Path="ZipCode" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <!-- Placeholder for the TextBox itself -->
+                            <AdornedElementPlaceholder x:Name="textBox"/>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+            <Label Content="Rôle" HorizontalAlignment="Left" Margin="364,44,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <ComboBox ItemsSource="{Binding Roles}" SelectedValue="{Binding SelectedRole}"  HorizontalAlignment="Left" Margin="320,71,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <!--<TextBlock Text="{Binding Path=id}"/>
+                            <TextBlock Text=" - "/>-->
+                            <TextBlock Text="{Binding Path=label}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <Label Content="Sécurité Sociale" HorizontalAlignment="Left" Margin="324,95,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="318,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="255">
+                <TextBox.Text>
+                    <Binding Path="SocialSecurityNumber" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <!-- Placeholder for the TextBox itself -->
+                            <AdornedElementPlaceholder x:Name="textBox"/>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+            <Label Content="Numéro de banque" HorizontalAlignment="Left" Margin="328,141,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="318,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="255">
+                <TextBox.Text>
+                    <Binding Path="BankAccount" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <!-- Placeholder for the TextBox itself -->
+                            <AdornedElementPlaceholder x:Name="textBox"/>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+
+
+            <Button Content="Ajouter" HorizontalAlignment="Left" Margin="342,255,0,0" VerticalAlignment="Top" Width="96" Command="{Binding AddEmployee}"/>
+
+        </Grid>
+
+        <Grid Margin="0,368,0,0">
+            <DataGrid ItemsSource="{Binding ProduitSelectionne}" SelectedItem="{Binding ProduitASupprimer}" HorizontalAlignment="Left" Height="204" Margin="308,154,0,0" VerticalAlignment="Top" Width="126" AutoGenerateColumns="False" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Label" Binding="{Binding label}" MinWidth="250" Width="Auto" />
+                    <DataGridTextColumn Header="Version" Binding="{Binding version}" MinWidth="300" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid ItemsSource="{Binding RemainingDevice}" SelectedItem="{Binding ProduitAAjouter}" HorizontalAlignment="Left" Height="229" Margin="16,154,0,0" VerticalAlignment="Top" Width="127" AutoGenerateColumns="False" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Label" Binding="{Binding label}"  Width="Auto" />
+                    <DataGridTextColumn Header="Version" Binding="{Binding version}"  Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+
+            <Button Background="{x:Null}" Command="{Binding AjouterProduit}"  RenderTransformOrigin="0.5,0.5" Height="Auto" Margin="186,164,188,157" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Image Source="/Mygavolt;component/GraphicsRessources/Icons/ArrowUp.png" Height="52" Width="59" />
+            </Button>
+
+            <Button Background="{x:Null}" Command="{Binding SupprimerProduit}"  RenderTransformOrigin="0.5,0.5" Height="Auto" Margin="186,262,185,57" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Image Source="/Mygavolt;component/GraphicsRessources/Icons/ArrowDown.png" Height="54" Width="58"/>
+            </Button>
+            <Button Content="Affilier le matériel" Command="{Binding AjouterIntervention}" HorizontalAlignment="Left" Margin="308,358,0,0" VerticalAlignment="Top" Width="126" Height="25"/>
+            <Label Content="Matériel disponible" HorizontalAlignment="Left" Margin="16,93,0,0" VerticalAlignment="Top" Width="122"/>
+            <Label Content="Matériel affilié" HorizontalAlignment="Left" Margin="338,88,0,0" VerticalAlignment="Top" Width="66" Height="21"/>
+            <ComboBox HorizontalAlignment="Left" Margin="308,119,0,0" VerticalAlignment="Top" Width="126" ItemsSource="{Binding Employees}" SelectedValue="{Binding SelectedEmployeeD}" Height="34">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Path=lastname}"/>
+                            <TextBlock Text=" "/>
+                            <TextBlock Text="{Binding Path=firstname}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>
+    </Grid>
+</UserControl>

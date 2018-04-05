@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Mygavolt.View.Manage.Device.MainDevice.MainDeviceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mygavolt.View.Manage.Device.MainDevice"
+             
+             xmlns:AddDevice="clr-namespace:Mygavolt.View.Manage.Device.Add"
+             xmlns:SearchDevice="clr-namespace:Mygavolt.View.Manage.Device.Search"
+             xmlns:ModifyDevice="clr-namespace:Mygavolt.View.Manage.Device.Modify"
+             
+             mc:Ignorable="d" Height="900" Width="1145">
+
+    <UserControl.Resources>
+
+        <DataTemplate DataType="{x:Type SearchDevice:SearchDeviceViewModel}">
+            <SearchDevice:SearchDeviceView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type AddDevice:AddDeviceViewModel}">
+            <AddDevice:AddDeviceView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ModifyDevice:ModifyDeviceViewModel}">
+            <ModifyDevice:ModifyDeviceView/>
+        </DataTemplate>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <SearchDevice:SearchDeviceView />
+            <!--  <ToggleButton Name = "button" Height="45" Width="154" Foreground="Black" Margin="0,255,445,10" Checked="button_Checked">
+                <ToggleButton.Template>
+                    <ControlTemplate  TargetType="ToggleButton">
+                        <TextBlock>Modifier</TextBlock>
+                    </ControlTemplate>
+                </ToggleButton.Template>
+            </ToggleButton>
+            <Popup IsOpen="{Binding IsChecked, ElementName=button}"  >
+                <Border>
+                    <ModifyDevice:ModifyDeviceView Height="319" Width="290" />
+                </Border>
+            </Popup>  -->
+        </Grid>
+
+
+
+
+        <Grid Grid.Column="1">
+            <AddDevice:AddDeviceView />
+        </Grid>
+
+    </Grid>
+</UserControl>

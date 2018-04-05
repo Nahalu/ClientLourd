@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="Mygavolt.View.Manage.Employee.MainEmployee.MainEmployeeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mygavolt.View.Manage.Employee.MainEmployee"
+             xmlns:AddEmployee="clr-namespace:Mygavolt.View.Manage.Employee.Add"
+             xmlns:ModifyEmployee="clr-namespace:Mygavolt.View.Manage.Employee.Modify"
+             xmlns:SearchEmployee="clr-namespace:Mygavolt.View.Manage.Employee.Search"
+             
+             mc:Ignorable="d" Height="900" Width="1145">
+
+    <UserControl.Resources>
+
+        <DataTemplate DataType="{x:Type AddEmployee:AddEmployeeViewModel}">
+            <AddEmployee:AddEmployeeView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type SearchEmployee:SearchEmployeeViewModel}">
+            <SearchEmployee:SearchEmployeeView/>
+        </DataTemplate>
+
+    </UserControl.Resources>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <SearchEmployee:SearchEmployeeView />
+        </Grid>
+
+
+        <Grid Grid.Column="1">
+            <AddEmployee:AddEmployeeView />
+        </Grid>
+
+    </Grid>
+</UserControl>
