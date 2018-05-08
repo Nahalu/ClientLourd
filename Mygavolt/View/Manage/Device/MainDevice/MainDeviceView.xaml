@@ -7,7 +7,7 @@
              
              xmlns:AddDevice="clr-namespace:Mygavolt.View.Manage.Device.Add"
              xmlns:SearchDevice="clr-namespace:Mygavolt.View.Manage.Device.Search"
-             xmlns:ModifyDevice="clr-namespace:Mygavolt.View.Manage.Device.Modify"
+
              
              mc:Ignorable="d" Height="900" Width="1145">
 
@@ -21,9 +21,6 @@
             <AddDevice:AddDeviceView/>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type ModifyDevice:ModifyDeviceViewModel}">
-            <ModifyDevice:ModifyDeviceView/>
-        </DataTemplate>
 
     </UserControl.Resources>
 

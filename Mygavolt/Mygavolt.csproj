@@ -85,21 +85,18 @@
       <DependentUpon>MainCustomerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manage\Customer\MainCustomer\MainCustomerViewModel.cs" />
-    <Compile Include="View\Manage\Customer\Modify\ModifyCustomerViewModel.cs" />
     <Compile Include="View\Manage\Customer\Search\SearchCustomerViewModel.cs" />
     <Compile Include="View\Manage\Device\Add\AddDeviceViewModel.cs" />
     <Compile Include="View\Manage\Device\MainDevice\MainDeviceView.xaml.cs">
       <DependentUpon>MainDeviceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manage\Device\MainDevice\MainDeviceViewModel.cs" />
-    <Compile Include="View\Manage\Device\Modify\ModifyDeviceViewModel.cs" />
     <Compile Include="View\Manage\Device\Search\SearchDeviceViewModel.cs" />
     <Compile Include="View\Manage\Employee\Add\AddEmployeeViewModel.cs" />
     <Compile Include="View\Manage\Employee\MainEmployee\MainEmployeeView.xaml.cs">
       <DependentUpon>MainEmployeeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manage\Employee\MainEmployee\MainEmployeeViewModel.cs" />
-    <Compile Include="View\Manage\Employee\Modify\ModifyEmployeeViewModel.cs" />
     <Compile Include="View\Manage\Employee\Search\SearchEmployeeViewModel.cs" />
     <Compile Include="View\Manage\Role\RoleView.xaml.cs">
       <DependentUpon>RoleView.xaml</DependentUpon>
@@ -115,14 +112,8 @@
     <Compile Include="View\Manage\Customer\Search\SearchCustomerView.xaml.cs">
       <DependentUpon>SearchCustomerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Manage\Customer\Modify\ModifyCustomerView.xaml.cs">
-      <DependentUpon>ModifyCustomerView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Manage\Device\Add\AddDeviceView.xaml.cs">
       <DependentUpon>AddDeviceView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Manage\Device\Modify\ModifyDeviceView.xaml.cs">
-      <DependentUpon>ModifyDeviceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Manage\Device\Search\SearchDeviceView.xaml.cs">
       <DependentUpon>SearchDeviceView.xaml</DependentUpon>
@@ -130,19 +121,12 @@
     <Compile Include="View\Manage\Employee\Add\AddEmployeeView.xaml.cs">
       <DependentUpon>AddEmployeeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Manage\Employee\Modify\ModifyEmployeeView.xaml.cs">
-      <DependentUpon>ModifyEmployeeView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Manage\Employee\Search\SearchEmployeeView.xaml.cs">
       <DependentUpon>SearchEmployeeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Map\MapView.xaml.cs">
       <DependentUpon>MapView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Schedule\Calendar\CalendarView.xaml.cs">
-      <DependentUpon>CalendarView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Schedule\Calendar\CalendarViewModel.cs" />
     <Compile Include="View\Schedule\MainSchedule\MainScheduleView.xaml.cs">
       <DependentUpon>MainScheduleView.xaml</DependentUpon>
     </Compile>
@@ -194,19 +178,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Manage\Customer\Modify\ModifyCustomerView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Manage\Device\Add\AddDeviceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Manage\Device\MainDevice\MainDeviceView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Manage\Device\Modify\ModifyDeviceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -222,10 +198,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Manage\Employee\Modify\ModifyEmployeeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Manage\Employee\Search\SearchEmployeeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -235,10 +207,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Map\MapView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Schedule\Calendar\CalendarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

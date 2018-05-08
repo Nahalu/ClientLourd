@@ -5,107 +5,52 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mygavolt.View.Schedule.MainSchedule"
              xmlns:Filters="clr-namespace:Mygavolt.Filters"
-             mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="300">
-    <Grid Margin="10,10,10,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
-            <RowDefinition Height="198" />
-        </Grid.RowDefinitions>
+             mc:Ignorable="d" Height="626.8" Width="1052">
+    <Grid Margin="0,0,0.2,-0.2">
+        <Grid Margin="63,0,365,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition  />
+            </Grid.RowDefinitions>
 
-        <!--Filtering toolbar-->
-        <Expander Header="Filtering" Grid.Row="0">
-            <DockPanel Margin="0,5,0,5" >
-                <TextBlock Text="Search by Label" Margin="0,0,20,0"/>
-                <TextBox Width="150" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
-            </DockPanel>
-        </Expander>
+            <TextBlock Grid.Column="0" FontSize="15" TextAlignment="Center" Text="{Binding DateStr1}" Background="#FF999581"></TextBlock>
+            <TextBlock Grid.Column="1" FontSize="15" TextAlignment="Center" Text="{Binding DateStr2}" Background="#FF999581"></TextBlock>
+            <TextBlock Grid.Column="2" FontSize="15" TextAlignment="Center" Text="{Binding DateStr3}" Background="#FF999581"></TextBlock>
+            <TextBlock Grid.Column="3" FontSize="15" TextAlignment="Center" Text="{Binding DateStr4}" Background="#FF999581"></TextBlock>
+            <TextBlock Grid.Column="4" FontSize="15" TextAlignment="Center" Text="{Binding DateStr5}" Background="#FF999581"></TextBlock>
+            <TextBlock Grid.Column="5" FontSize="15" TextAlignment="Center" Text="{Binding DateStr6}" Background="#FF999581"></TextBlock>
+            <TextBlock Grid.Column="6" FontSize="15" TextAlignment="Center" Text="{Binding DateStr7}" Background="#FF999581"></TextBlock>
 
-        <!--Sorting toolbar-->
-        <Expander Header="Sorting" Grid.Row="1">
-            <DockPanel Grid.Row="1" Margin="0,5,0,5">
-                <CheckBox Content="Sort By Id" Margin="5" IsChecked="{Binding SortById}"/>
-                <CheckBox Content="Sort By Label" Margin="5" IsChecked="{Binding SortByName}"/>
-                <CheckBox Content="Ascending" Margin="15,5,5,5" IsChecked="{Binding SortAscending}" />
-            </DockPanel>
-        </Expander>
+            <ListBox Name="St1" ItemsSource="{Binding ListButton1}" Grid.Column="0" Grid.Row="1" Background="#FFCECECE"></ListBox>
+            <ListBox Name="St2" ItemsSource="{Binding ListButton2}" Grid.Column="1" Grid.Row="1" Background="#FFCECECE"></ListBox>
+            <ListBox Name="St3" ItemsSource="{Binding ListButton3}" Grid.Column="2" Grid.Row="1" Background="#FFCECECE"></ListBox>
+            <ListBox Name="St4" ItemsSource="{Binding ListButton4}" Grid.Column="3" Grid.Row="1" Background="#FFCECECE"></ListBox>
+            <ListBox Name="St5" ItemsSource="{Binding ListButton5}" Grid.Column="4" Grid.Row="1" Background="#FFCECECE"></ListBox>
+            <ListBox Name="St6" ItemsSource="{Binding ListButton6}" Grid.Column="5" Grid.Row="1" Background="#FFCECECE"></ListBox>
+            <ListBox Name="St7" ItemsSource="{Binding ListButton7}" Grid.Column="6" Grid.Row="1" Background="#FFCECECE"></ListBox>
 
-        <!--Grouping toolbar-->
-        <Expander Header="Grouping" Grid.Row="2">
-            <DockPanel Grid.Row="1" Margin="0,5,0,5">
-                <CheckBox Content="Group By Version" Margin="5" IsChecked="{Binding GroupByVersion}"/>
-            </DockPanel>
-        </Expander>
-
-        <DataGrid ItemsSource="{Binding MyData}" SelectedItem="{Binding SelectedCustomer}" Grid.Row="3" Margin="0,5,0,0" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False">
-            <DataGrid.GroupStyle>
-                <GroupStyle>
-                    <GroupStyle.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding lastname}" FontWeight="Bold"/>
-                        </DataTemplate>
-                    </GroupStyle.HeaderTemplate>
-                </GroupStyle>
-            </DataGrid.GroupStyle>
+        </Grid>
+        <DataGrid ItemsSource="{Binding ListInterventionss}" Margin="756,0,0,0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}"/>
-                <DataGridTextColumn Header="Nom" Binding="{Binding lastname}"/>
-                <DataGridTextColumn Header="Prénom" Binding="{Binding firstname}"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding email}"/>
-                <DataGridTextColumn Header="Phone" Binding="{Binding phone}"/>
-                <DataGridTextColumn Header="Mobile" Binding="{Binding mobile}"/>
-                <DataGridTextColumn Header="Date de Naissance" Binding="{Binding birthdate}"/>
-                <DataGridComboBoxColumn Header="Rôle" ItemsSource="{Binding ListRoles}">
-                </DataGridComboBoxColumn>
-                <DataGridTextColumn Header="Actif" Binding="{Binding isActive}"/>
-
+                <DataGridTextColumn Header="Date" Binding="{Binding date}"/>
+                <DataGridTextColumn Header="Report" Binding="{Binding report}"/>
+                <DataGridTextColumn Header="Version" Binding="{Binding version}"/>
+                <DataGridTextColumn Header="IMEI" Binding="{Binding IMEI}"/>
+                <DataGridTextColumn Header="Adresse MAC" Binding="{Binding mac_adress}"/>
             </DataGrid.Columns>
         </DataGrid>
-
-        <StackPanel Grid.Row="4" Margin="10,3,0,0">
-            <!--Controls to move the selection-->
-            <StackPanel Orientation="Horizontal" TextElement.FontWeight="Bold" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-                <Button Content="&lt;|" Command="Filters:Commands.SelectFirst"/>
-                <Button Content="&lt;" Command="Filters:Commands.SelectPrevious"/>
-                <Button Content="&gt;" Command="Filters:Commands.SelectNext"/>
-                <Button Content="|&gt;" Command="Filters:Commands.SelectLast"/>
-
-            </StackPanel>
-            <Button Command="{Binding DeleteCustomer}" Content="Supprimer"/>
-            <Button Command="{Binding ModifyModify}" Content="Modifier"  />
-            <Border Margin="0,5,0,0" CornerRadius="5" BorderBrush="Silver" BorderThickness="1" Padding="5">
-
-                <!--Shows the currently selected item-->
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock Text="Currently selected" FontWeight="Bold" Grid.ColumnSpan="2"/>
-
-                    <TextBlock Text="ID" Grid.Row="1"/>
-                    <TextBlock Text="{Binding CurrentSelectedPerson.id}" Grid.Row="1" Grid.Column="1"/>
-
-                    <TextBlock Text="Label" Grid.Row="2"/>
-                    <TextBlock Text="{Binding CurrentSelectedPerson.lastname}" Grid.Column="2" Grid.Row="2"/>
-
-                    <TextBlock Text="Version" Grid.Row="3"/>
-                    <TextBlock Text="{Binding CurrentSelectedPerson.business_name}" Grid.Column="3" Grid.Row="3"/>
-
-                </Grid>
-            </Border>
-        </StackPanel>
-
+        <Button Content="Next" Command="{Binding NextWeek}" HorizontalAlignment="Left" Margin="708,10,0,0" VerticalAlignment="Top" Width="43" Height="84"/>
+        <Button Content="Previous" Command="{Binding PreviousWeek}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="43" Height="84"/>
     </Grid>
 
 </UserControl>

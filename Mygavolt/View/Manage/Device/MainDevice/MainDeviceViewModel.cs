@@ -438,7 +438,7 @@ namespace Mygavolt.View.Manage.Device.MainDevice
             {
                 myDataView.GroupDescriptions.Clear();
                 if (GroupByVersion)
-                    myDataView.GroupDescriptions.Add(new PropertyGroupDescription("version"));
+                    myDataView.GroupDescriptions.Add(new PropertyGroupDescription("system"));
             }
         }
         #endregion

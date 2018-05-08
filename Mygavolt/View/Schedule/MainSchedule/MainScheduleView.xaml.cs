@@ -18,11 +18,15 @@ namespace Mygavolt.View.Schedule.MainSchedule
     /// <summary>
     /// Logique d'interaction pour MainScheduleView.xaml
     /// </summary>
+    /// 
+
     public partial class MainScheduleView : UserControl
     {
+        MainScheduleViewModel ViewModel = new MainScheduleViewModel();
         public MainScheduleView()
         {
             InitializeComponent();
+            this.DataContext = ViewModel; 
         }
     }
 }

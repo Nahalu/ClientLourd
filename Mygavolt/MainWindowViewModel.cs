@@ -5,20 +5,16 @@ using System.Windows.Input;
 using Mygavolt.View.Home;
 using Mygavolt.View.Map;
 using Mygavolt.View.Manage.Customer.Add;
-using Mygavolt.View.Manage.Customer.Modify;
 using Mygavolt.View.Manage.Customer.Search;
 using Mygavolt.View.Manage.Customer.MainCustomer;
 using Mygavolt.View.Manage.Device.Add;
-using Mygavolt.View.Manage.Device.Modify;
 using Mygavolt.View.Manage.Device.Search;
 using Mygavolt.View.Manage.Device.MainDevice;
 using Mygavolt.View.Manage.Employee.Add;
-using Mygavolt.View.Manage.Employee.Modify;
 using Mygavolt.View.Manage.Employee.Search;
 using Mygavolt.View.Manage.Employee.MainEmployee;
 using Mygavolt.View.Schedule.MainSchedule;
 using Mygavolt.View.Affiliate.Intervention;
-using Mygavolt.View.Schedule.Calendar;
 using Mygavolt.View.Schedule.Planning;
 using Mygavolt.View.Manage.Role;
 
@@ -42,20 +38,16 @@ namespace Mygavolt
             PageViewModels.Add(new HomeViewModel());
             PageViewModels.Add(new MapViewModel());
             PageViewModels.Add(new AddCustomerViewModel());
-            PageViewModels.Add(new ModifyCustomerViewModel());
             PageViewModels.Add(new SearchCustomerViewModel());
             PageViewModels.Add(new AddDeviceViewModel());
-            PageViewModels.Add(new ModifyDeviceViewModel());
             PageViewModels.Add(new SearchDeviceViewModel());
             PageViewModels.Add(new AddEmployeeViewModel());
-            PageViewModels.Add(new ModifyEmployeeViewModel());
             PageViewModels.Add(new SearchEmployeeViewModel());
             PageViewModels.Add(new MainEmployeeViewModel());
             PageViewModels.Add(new MainDeviceViewModel());
             PageViewModels.Add(new MainCustomerViewModel());
             PageViewModels.Add(new MainScheduleViewModel());
             PageViewModels.Add(new InterventionViewModel());
-            PageViewModels.Add(new CalendarViewModel());
             PageViewModels.Add(new PlanningViewModel());
             PageViewModels.Add(new RoleViewModel());
 
@@ -144,116 +136,88 @@ namespace Mygavolt
                 return PageViewModels[2];
             }
         }
-        public IPageViewModel ModifyCustomer
+        public IPageViewModel SearchCustomer
         {
             get
             {
                 return PageViewModels[3];
             }
         }
-        public IPageViewModel SearchCustomer
+        public IPageViewModel AddDevice
         {
             get
             {
                 return PageViewModels[4];
             }
         }
-        public IPageViewModel AddDevice
+        public IPageViewModel SearchDevice
         {
             get
             {
                 return PageViewModels[5];
             }
         }
-        public IPageViewModel ModifyDevice
+        public IPageViewModel AddEmployee
         {
             get
             {
                 return PageViewModels[6];
             }
         }
-        public IPageViewModel SearchDevice
+        public IPageViewModel SearchEmployee
         {
             get
             {
                 return PageViewModels[7];
             }
         }
-        public IPageViewModel AddEmployee
+        public IPageViewModel MainEmployee
         {
             get
             {
                 return PageViewModels[8];
             }
         }
-        public IPageViewModel ModifyEmployee
+        public IPageViewModel MainDevice
         {
             get
             {
                 return PageViewModels[9];
             }
         }
-        public IPageViewModel SearchEmployee
+        public IPageViewModel MainCustomer
         {
             get
             {
                 return PageViewModels[10];
             }
         }
-        public IPageViewModel MainEmployee
+        public IPageViewModel MainSchedule
         {
             get
             {
                 return PageViewModels[11];
             }
         }
-        public IPageViewModel MainDevice
+        public IPageViewModel Intervention
         {
             get
             {
                 return PageViewModels[12];
             }
         }
-        public IPageViewModel MainCustomer
+        public IPageViewModel Planning
         {
             get
             {
                 return PageViewModels[13];
             }
         }
-        public IPageViewModel MainSchedule
-        {
-            get
-            {
-                return PageViewModels[14];
-            }
-        }
-        public IPageViewModel Intervention
-        {
-            get
-            {
-                return PageViewModels[15];
-            }
-        }
-        public IPageViewModel Calendar
-        {
-            get
-            {
-                return PageViewModels[16];
-            }
-        }
-        public IPageViewModel Planning
-        {
-            get
-            {
-                return PageViewModels[17];
-            }
-        }
         public IPageViewModel Role
         {
             get
             {
-                return PageViewModels[18];
+                return PageViewModels[14];
             }
         }
         #endregion

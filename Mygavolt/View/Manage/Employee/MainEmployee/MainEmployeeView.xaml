@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mygavolt.View.Manage.Employee.MainEmployee"
              xmlns:AddEmployee="clr-namespace:Mygavolt.View.Manage.Employee.Add"
-             xmlns:ModifyEmployee="clr-namespace:Mygavolt.View.Manage.Employee.Modify"
              xmlns:SearchEmployee="clr-namespace:Mygavolt.View.Manage.Employee.Search"
              
              mc:Ignorable="d" Height="900" Width="1145">
