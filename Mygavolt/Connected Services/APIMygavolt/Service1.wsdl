@@ -4,8 +4,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:51596/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:51596/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:51596/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:51596/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WebService" />
+      <xsd:import schemaLocation="http://localhost:51596/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebService" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetAddressCustomers_InputMessage">
@@ -14,11 +13,11 @@
   <wsdl:message name="IService1_GetAddressCustomers_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAddressCustomersResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetContactsCustomers_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetContactsCustomers" />
+  <wsdl:message name="IService1_GetAddressEmployees_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressEmployees" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetContactsCustomers_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetContactsCustomersResponse" />
+  <wsdl:message name="IService1_GetAddressEmployees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressEmployeesResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetCustomers_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCustomers" />
@@ -37,6 +36,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_GetEmployees_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEmployeesCombo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeesCombo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEmployeesCombo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeesComboResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetInterventions_InputMessage">
     <wsdl:part name="parameters" element="tns:GetInterventions" />
@@ -62,12 +67,6 @@
   <wsdl:message name="IService1_GetRoles_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRolesResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetNomEmployees_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetNomEmployees" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetNomEmployees_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetNomEmployeesResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_GetDevicesNoAffiliation_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDevicesNoAffiliation" />
   </wsdl:message>
@@ -80,11 +79,11 @@
   <wsdl:message name="IService1_GetEmployeesActive_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetEmployeesActiveResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetEmployeesInactive_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetEmployeesInactive" />
+  <wsdl:message name="IService1_GetEmployeesInactives_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeesInactives" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetEmployeesInactive_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetEmployeesInactiveResponse" />
+  <wsdl:message name="IService1_GetEmployeesInactives_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeesInactivesResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_SetAddressCustomer_InputMessage">
     <wsdl:part name="parameters" element="tns:SetAddressCustomer" />
@@ -158,11 +157,11 @@
   <wsdl:message name="IService1_ModifyAddressCustomer_OutputMessage">
     <wsdl:part name="parameters" element="tns:ModifyAddressCustomerResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_ModifyContactCustomer_InputMessage">
-    <wsdl:part name="parameters" element="tns:ModifyContactCustomer" />
+  <wsdl:message name="IService1_ModifyAddressEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyAddressEmployee" />
   </wsdl:message>
-  <wsdl:message name="IService1_ModifyContactCustomer_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ModifyContactCustomerResponse" />
+  <wsdl:message name="IService1_ModifyAddressEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyAddressEmployeeResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_ModifyIntervention_InputMessage">
     <wsdl:part name="parameters" element="tns:ModifyIntervention" />
@@ -212,12 +211,6 @@
   <wsdl:message name="IService1_DeleteAddressCustomer_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteAddressCustomerResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_DeleteContactCustomer_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteContactCustomer" />
-  </wsdl:message>
-  <wsdl:message name="IService1_DeleteContactCustomer_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteContactCustomerResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_DeleteMotive_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteMotive" />
   </wsdl:message>
@@ -235,9 +228,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAddressCustomers" message="tns:IService1_GetAddressCustomers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAddressCustomersResponse" message="tns:IService1_GetAddressCustomers_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetContactsCustomers">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetContactsCustomers" message="tns:IService1_GetContactsCustomers_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetContactsCustomersResponse" message="tns:IService1_GetContactsCustomers_OutputMessage" />
+    <wsdl:operation name="GetAddressEmployees">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAddressEmployees" message="tns:IService1_GetAddressEmployees_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAddressEmployeesResponse" message="tns:IService1_GetAddressEmployees_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCustomers">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCustomers" message="tns:IService1_GetCustomers_InputMessage" />
@@ -250,6 +243,10 @@
     <wsdl:operation name="GetEmployees">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEmployees" message="tns:IService1_GetEmployees_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEmployeesResponse" message="tns:IService1_GetEmployees_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesCombo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEmployeesCombo" message="tns:IService1_GetEmployeesCombo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEmployeesComboResponse" message="tns:IService1_GetEmployeesCombo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetInterventions">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetInterventions" message="tns:IService1_GetInterventions_InputMessage" />
@@ -267,10 +264,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetRoles" message="tns:IService1_GetRoles_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetRolesResponse" message="tns:IService1_GetRoles_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetNomEmployees">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetNomEmployees" message="tns:IService1_GetNomEmployees_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetNomEmployeesResponse" message="tns:IService1_GetNomEmployees_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetDevicesNoAffiliation">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDevicesNoAffiliation" message="tns:IService1_GetDevicesNoAffiliation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDevicesNoAffiliationResponse" message="tns:IService1_GetDevicesNoAffiliation_OutputMessage" />
@@ -279,9 +272,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEmployeesActive" message="tns:IService1_GetEmployeesActive_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEmployeesActiveResponse" message="tns:IService1_GetEmployeesActive_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetEmployeesInactive">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEmployeesInactive" message="tns:IService1_GetEmployeesInactive_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEmployeesInactiveResponse" message="tns:IService1_GetEmployeesInactive_OutputMessage" />
+    <wsdl:operation name="GetEmployeesInactives">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEmployeesInactives" message="tns:IService1_GetEmployeesInactives_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEmployeesInactivesResponse" message="tns:IService1_GetEmployeesInactives_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SetAddressCustomer">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SetAddressCustomer" message="tns:IService1_SetAddressCustomer_InputMessage" />
@@ -331,9 +324,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ModifyAddressCustomer" message="tns:IService1_ModifyAddressCustomer_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ModifyAddressCustomerResponse" message="tns:IService1_ModifyAddressCustomer_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ModifyContactCustomer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ModifyContactCustomer" message="tns:IService1_ModifyContactCustomer_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ModifyContactCustomerResponse" message="tns:IService1_ModifyContactCustomer_OutputMessage" />
+    <wsdl:operation name="ModifyAddressEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ModifyAddressEmployee" message="tns:IService1_ModifyAddressEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ModifyAddressEmployeeResponse" message="tns:IService1_ModifyAddressEmployee_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ModifyIntervention">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ModifyIntervention" message="tns:IService1_ModifyIntervention_InputMessage" />
@@ -367,10 +360,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteAddressCustomer" message="tns:IService1_DeleteAddressCustomer_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteAddressCustomerResponse" message="tns:IService1_DeleteAddressCustomer_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DeleteContactCustomer">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteContactCustomer" message="tns:IService1_DeleteContactCustomer_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteContactCustomerResponse" message="tns:IService1_DeleteContactCustomer_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="DeleteMotive">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteMotive" message="tns:IService1_DeleteMotive_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteMotiveResponse" message="tns:IService1_DeleteMotive_OutputMessage" />
@@ -391,8 +380,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetContactsCustomers">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetContactsCustomers" style="document" />
+    <wsdl:operation name="GetAddressEmployees">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAddressEmployees" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -420,6 +409,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetEmployees">
       <soap:operation soapAction="http://tempuri.org/IService1/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesCombo">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetEmployeesCombo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -463,15 +461,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNomEmployees">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetNomEmployees" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetDevicesNoAffiliation">
       <soap:operation soapAction="http://tempuri.org/IService1/GetDevicesNoAffiliation" style="document" />
       <wsdl:input>
@@ -490,8 +479,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetEmployeesInactive">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetEmployeesInactive" style="document" />
+    <wsdl:operation name="GetEmployeesInactives">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetEmployeesInactives" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -607,8 +596,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ModifyContactCustomer">
-      <soap:operation soapAction="http://tempuri.org/IService1/ModifyContactCustomer" style="document" />
+    <wsdl:operation name="ModifyAddressEmployee">
+      <soap:operation soapAction="http://tempuri.org/IService1/ModifyAddressEmployee" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -681,15 +670,6 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteAddressCustomer">
       <soap:operation soapAction="http://tempuri.org/IService1/DeleteAddressCustomer" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteContactCustomer">
-      <soap:operation soapAction="http://tempuri.org/IService1/DeleteContactCustomer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

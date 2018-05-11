@@ -13,14 +13,14 @@ namespace Mygavolt.View.Manage.Role
         private string name;
         public string Name { get => name; set => name = value; }
 
-        private APIMygavolt.roles ActualRole;
+
         private roles selectedRole;
 
 
         public RoleViewModel()
         {
             // connexion à l'API a chaque chargement de la page
-            ActualRole = new APIMygavolt.roles();
+
 
             // Si on veut initialiser des valeurs dès l'ouverture, il faut le faire ici
 
@@ -76,7 +76,6 @@ namespace Mygavolt.View.Manage.Role
 
         private IList<roles> SearchRolesBase()
         {
-            roles role = new roles();
             IList<roles> ListRoles = null;
             using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
             {

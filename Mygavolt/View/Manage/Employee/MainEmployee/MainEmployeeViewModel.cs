@@ -25,7 +25,7 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
         {
             get
             {
-
+                
                 myData = new ObservableCollection<employees>(SearchEmployeesBase());
                 myDataView = CollectionViewSource.GetDefaultView(myData);
 
@@ -41,17 +41,9 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
 
         private IList<employees> SearchEmployeesBase()
         {
-            employees employee = new employees();
-            employee.lastname = "";
-            employee.firstname = "";
-            employee.email = "";
-            employee.phone = "";
-            employee.mobile = "";
-
             IList<employees> ListEmployees = null;
             using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
             {
-
                 {
                     ListEmployees = api.GetEmployees();
                 }
@@ -59,6 +51,28 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
             return ListEmployees;
         }
 
+        private IList<SPS_EMPLOYEES_Result> SearchEmployeesBaseCombo()
+        {
+            IList<SPS_EMPLOYEES_Result> ListEmployeesCombo = null;
+            using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
+            {
+                {
+                    ListEmployeesCombo = api.GetEmployeesCombo();
+                }
+            }
+            return ListEmployeesCombo;
+        }
+        
+        private IList<SPS_EMPLOYEES_Result> _EmploCombo = null;
+        public IList<SPS_EMPLOYEES_Result> EmploCombo
+        {
+            get
+            {
+                _EmploCombo = SearchEmployeesBaseCombo();
+
+                return _EmploCombo;
+            }
+        }
 
         #region Properties used for Filtering
         string searchText = String.Empty;
@@ -405,18 +419,7 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
         
 
 
-        private IList<roles> _Roles = null;
-        public IList<roles> Roles
-        {
-            get
-            {
-                if (_Roles == null)
-                {
-                    _Roles = ListRole();
-                }
-                return _Roles;
-            }
-        }
+
 
                 /*  public string Birthdate
           {
@@ -466,15 +469,29 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
                 listeRole = context.GetRoles();
             }
             return listeRole;
+
         }
 
+        private IList<roles> _Roles = null;
+        public IList<roles> Roles
+        {
+            get
+            {
+                if (_Roles == null)
+                {
+                    _Roles = ListRole();
+                }
+                return _Roles;
+            }
+        }
 
         public MainEmployeeViewModel()
         {
             employe = new APIMygavolt.employees();
+            
         }
 
-        
+
         public ICommand _AddEmployee;
         public ICommand _DeleteEmployee;
         public ICommand _ModifyEmployee;
@@ -519,6 +536,7 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
         }
 
 
+
         private void AddEmployeeBase()
         {
 
@@ -535,11 +553,11 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
             contact.roles = _SelectedRole;
             contact.birthdate = _BirthDate;
             contact.arrival_date = _ArrivalDate;
-            contact.street_name = _StreetName;
-            contact.street_number = _StreetNumber;
-            contact.zip_code = _ZipCode;
-            contact.city = _City;
-            contact.country = _Country;
+            //contact.address_employees.street_name = _StreetName;
+            //contact.street_number = _StreetNumber;
+            //contact.zip_code = _ZipCode;
+            //contact.city = _City;
+            //contact.country = _Country;
             using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
             {
                     id_contact = api.SetEmployee(contact);
@@ -975,6 +993,7 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
                 return _SupprimerProduit;
             }
         }
+
 
         public void SupprimerProduitTemporaire()
         {

@@ -87,9 +87,6 @@ namespace Mygavolt.View.Affiliate.Intervention
         private IList<devices> SearchDeviceBase()
         {
             IList<devices> devicesTMP = null;
-            devices deviceTMP = new devices();
-            deviceTMP.label = "";
-            deviceTMP.version = "";
             using (APIMygavolt.Service1Client context = new APIMygavolt.Service1Client())
             {
                 devicesTMP = context.GetDevices();
@@ -119,9 +116,6 @@ namespace Mygavolt.View.Affiliate.Intervention
         private IList<employees> SearchEmployeeBase()
         {
             IList<employees> employeesTMP = null;
-            employees employeeTMP = new employees();
-            employeeTMP.lastname = "";
-            employeeTMP.firstname = "";
             using (APIMygavolt.Service1Client context = new APIMygavolt.Service1Client())
             {
                 employeesTMP = context.GetEmployees();

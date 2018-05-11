@@ -16,26 +16,26 @@
         </Grid.RowDefinitions>
 
         <!--Filtering toolbar-->
-        <Expander Header="Filtering" Grid.Row="0">
+        <Expander Header="Rechercher" Grid.Row="0">
             <DockPanel Margin="0,5,0,5" >
-                <TextBlock Text="Search by Label" Margin="0,0,20,0"/>
+                <TextBlock Text="Rechercher par nom" Margin="0,0,20,0"/>
                 <TextBox Width="150" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
             </DockPanel>
         </Expander>
 
         <!--Sorting toolbar-->
-        <Expander Header="Sorting" Grid.Row="1">
+        <Expander Header="Trier par filtre" Grid.Row="1">
             <DockPanel Grid.Row="1" Margin="0,5,0,5">
-                <CheckBox Content="Sort By Id" Margin="5" IsChecked="{Binding SortById}"/>
-                <CheckBox Content="Sort By Label" Margin="5" IsChecked="{Binding SortByName}"/>
-                <CheckBox Content="Ascending" Margin="15,5,5,5" IsChecked="{Binding SortAscending}" />
+                <CheckBox Content="Id" Margin="5" IsChecked="{Binding SortById}"/>
+                <CheckBox Content="Nom" Margin="5" IsChecked="{Binding SortByName}"/>
+                <CheckBox Content="Ordre croissant" Margin="15,5,5,5" IsChecked="{Binding SortAscending}" />
             </DockPanel>
         </Expander>
 
         <!--Grouping toolbar-->
-        <Expander Header="Grouping" Grid.Row="2">
+        <Expander Header="Grouper par filtre" Grid.Row="2">
             <DockPanel Grid.Row="1" Margin="0,5,0,5">
-                <CheckBox Content="Group By Version" Margin="5" IsChecked="{Binding GroupByVersion}"/>
+                <CheckBox Content="Rôle" Margin="5" IsChecked="{Binding GroupByVersion}"/>
             </DockPanel>
         </Expander>
 
@@ -57,11 +57,27 @@
                 <DataGridTextColumn Header="Phone" Binding="{Binding phone}"/>
                 <DataGridTextColumn Header="Mobile" Binding="{Binding mobile}"/>
                 <DataGridTextColumn Header="Date de Naissance" Binding="{Binding birthdate}"/>
-                <DataGridComboBoxColumn Header="Rôle" ItemsSource="{Binding ListRoles}">
-                </DataGridComboBoxColumn>
+
+
+                <DataGridTemplateColumn Header="Rôle">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding label}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox ItemsSource="{Binding EmploCombo}" SelectedItem="{Binding label}"></ComboBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+
+                <!--<DataGridComboBoxColumn Header="Rôle" ItemsSource="{Binding Roles}" SelectedItemBinding="{Binding id}">
+                </DataGridComboBoxColumn>-->
                 <DataGridTextColumn Header="Actif" Binding="{Binding isActive}"/>
 
             </DataGrid.Columns>
+            
         </DataGrid>
 
         <StackPanel Grid.Row="4" Margin="0,35,0,-32">

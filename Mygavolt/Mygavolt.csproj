@@ -238,6 +238,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\APIMygavolt\Mygavolt.APIMygavolt.address_customers.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\APIMygavolt\Mygavolt.APIMygavolt.address_employees.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\APIMygavolt\Mygavolt.APIMygavolt.customers.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -268,10 +274,10 @@
     <None Include="Connected Services\APIMygavolt\Mygavolt.APIMygavolt.SPS_EMPLOYEESINACTIVE_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\APIMygavolt\Service1.wsdl" />
-    <None Include="Connected Services\APIMygavolt\Service1.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Connected Services\APIMygavolt\Mygavolt.APIMygavolt.SPS_EMPLOYEES_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\APIMygavolt\Service1.wsdl" />
     <None Include="Connected Services\APIMygavolt\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
