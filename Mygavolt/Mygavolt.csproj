@@ -274,17 +274,14 @@
     <None Include="Connected Services\APIMygavolt\Mygavolt.APIMygavolt.SPS_EMPLOYEESINACTIVE_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\APIMygavolt\Mygavolt.APIMygavolt.SPS_EMPLOYEES_Result.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\APIMygavolt\Service1.wsdl" />
+    <None Include="Connected Services\APIMygavolt\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\APIMygavolt\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\APIMygavolt\Service12.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\APIMygavolt\Service13.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -303,6 +300,10 @@
     <WCFMetadataStorage Include="Connected Services\APIMygavolt\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="GraphicsRessources\Icons\ArrowDown.png" />
+    <Resource Include="GraphicsRessources\Icons\ArrowUp.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Connected Services\APIMygavolt\Service1.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -316,11 +317,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Resource Include="GraphicsRessources\Icons\ArrowDown.png" />
-    <Resource Include="GraphicsRessources\Icons\ArrowUp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WebService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WebService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfaddress_customers">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="address_customers" nillable="true" type="tns:address_customers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfaddress_customers" nillable="true" type="tns:ArrayOfaddress_customers" />
+  <xs:complexType name="address_customers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="customer_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="customers" nillable="true" type="tns:customers" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="street_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="street_number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zip_code" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="address_customers" nillable="true" type="tns:address_customers" />
+  <xs:complexType name="customers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address_customers" nillable="true" type="tns:ArrayOfaddress_customers" />
+      <xs:element minOccurs="0" name="business_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="created_at" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="interventions" nillable="true" type="tns:ArrayOfinterventions" />
+      <xs:element minOccurs="0" name="isActive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="updated_at" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="customers" nillable="true" type="tns:customers" />
+  <xs:complexType name="ArrayOfinterventions">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="interventions" nillable="true" type="tns:interventions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfinterventions" nillable="true" type="tns:ArrayOfinterventions" />
+  <xs:complexType name="interventions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="created_at" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="customer_id" type="xs:int" />
+      <xs:element minOccurs="0" name="customers" nillable="true" type="tns:customers" />
+      <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="dateStart" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="employee_id" type="xs:int" />
+      <xs:element minOccurs="0" name="employees" nillable="true" type="tns:employees" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="motive_id" type="xs:int" />
+      <xs:element minOccurs="0" name="motives" nillable="true" type="tns:motives" />
+      <xs:element minOccurs="0" name="report" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="updated_at" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="interventions" nillable="true" type="tns:interventions" />
+  <xs:complexType name="employees">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address_employees" nillable="true" type="tns:ArrayOfaddress_employees" />
+      <xs:element minOccurs="0" name="arrival_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="bank_account" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="birthdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="device_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="devices" nillable="true" type="tns:devices" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="interventions" nillable="true" type="tns:ArrayOfinterventions" />
+      <xs:element minOccurs="0" name="isActive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="role_id" type="xs:int" />
+      <xs:element minOccurs="0" name="roles" nillable="true" type="tns:roles" />
+      <xs:element minOccurs="0" name="updated_at" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="employees" nillable="true" type="tns:employees" />
+  <xs:complexType name="ArrayOfaddress_employees">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="address_employees" nillable="true" type="tns:address_employees" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfaddress_employees" nillable="true" type="tns:ArrayOfaddress_employees" />
+  <xs:complexType name="address_employees">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="employee_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="employees" nillable="true" type="tns:employees" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="street_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="street_number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zip_code" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="address_employees" nillable="true" type="tns:address_employees" />
+  <xs:complexType name="devices">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="employees" nillable="true" type="tns:ArrayOfemployees" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="imei" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isActive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="localization_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="localizations" nillable="true" type="tns:localizations" />
+      <xs:element minOccurs="0" name="mac_address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="purchase_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="systm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="updated_at" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="devices" nillable="true" type="tns:devices" />
+  <xs:complexType name="ArrayOfemployees">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="employees" nillable="true" type="tns:employees" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfemployees" nillable="true" type="tns:ArrayOfemployees" />
+  <xs:complexType name="localizations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="devices" nillable="true" type="tns:ArrayOfdevices" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lng" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="position" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="localizations" nillable="true" type="tns:localizations" />
+  <xs:complexType name="ArrayOfdevices">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="devices" nillable="true" type="tns:devices" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdevices" nillable="true" type="tns:ArrayOfdevices" />
+  <xs:complexType name="roles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="employees" nillable="true" type="tns:ArrayOfemployees" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="label" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="roles" nillable="true" type="tns:roles" />
+  <xs:complexType name="motives">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estimated_time" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="interventions" nillable="true" type="tns:ArrayOfinterventions" />
+      <xs:element minOccurs="0" name="label" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="motives" nillable="true" type="tns:motives" />
+  <xs:complexType name="ArrayOfcustomers">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="customers" nillable="true" type="tns:customers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcustomers" nillable="true" type="tns:ArrayOfcustomers" />
+  <xs:complexType name="ArrayOflocalizations">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="localizations" nillable="true" type="tns:localizations" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOflocalizations" nillable="true" type="tns:ArrayOflocalizations" />
+  <xs:complexType name="ArrayOfmotives">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="motives" nillable="true" type="tns:motives" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmotives" nillable="true" type="tns:ArrayOfmotives" />
+  <xs:complexType name="ArrayOfroles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="roles" nillable="true" type="tns:roles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfroles" nillable="true" type="tns:ArrayOfroles" />
+  <xs:complexType name="ArrayOfSPS_DEVICESNOAFFILIATION_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SPS_DEVICESNOAFFILIATION_Result" nillable="true" type="tns:SPS_DEVICESNOAFFILIATION_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSPS_DEVICESNOAFFILIATION_Result" nillable="true" type="tns:ArrayOfSPS_DEVICESNOAFFILIATION_Result" />
+  <xs:complexType name="SPS_DEVICESNOAFFILIATION_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="label" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SPS_DEVICESNOAFFILIATION_Result" nillable="true" type="tns:SPS_DEVICESNOAFFILIATION_Result" />
+  <xs:complexType name="ArrayOfSPS_EMPLOYEESACTIVE_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SPS_EMPLOYEESACTIVE_Result" nillable="true" type="tns:SPS_EMPLOYEESACTIVE_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSPS_EMPLOYEESACTIVE_Result" nillable="true" type="tns:ArrayOfSPS_EMPLOYEESACTIVE_Result" />
+  <xs:complexType name="SPS_EMPLOYEESACTIVE_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arrival_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="bank_account" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="birthdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="device_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="isActive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="role_id" type="xs:int" />
+      <xs:element minOccurs="0" name="updated_at" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SPS_EMPLOYEESACTIVE_Result" nillable="true" type="tns:SPS_EMPLOYEESACTIVE_Result" />
+  <xs:complexType name="ArrayOfSPS_EMPLOYEESINACTIVE_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SPS_EMPLOYEESINACTIVE_Result" nillable="true" type="tns:SPS_EMPLOYEESINACTIVE_Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSPS_EMPLOYEESINACTIVE_Result" nillable="true" type="tns:ArrayOfSPS_EMPLOYEESINACTIVE_Result" />
+  <xs:complexType name="SPS_EMPLOYEESINACTIVE_Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arrival_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="bank_account" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="birthdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="device_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="isActive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="role_id" type="xs:int" />
+      <xs:element minOccurs="0" name="updated_at" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SPS_EMPLOYEESINACTIVE_Result" nillable="true" type="tns:SPS_EMPLOYEESINACTIVE_Result" />
+</xs:schema>

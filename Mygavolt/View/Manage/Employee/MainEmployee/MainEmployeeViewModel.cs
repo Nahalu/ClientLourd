@@ -51,28 +51,28 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
             return ListEmployees;
         }
 
-        private IList<SPS_EMPLOYEES_Result> SearchEmployeesBaseCombo()
-        {
-            IList<SPS_EMPLOYEES_Result> ListEmployeesCombo = null;
-            using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
-            {
-                {
-                    ListEmployeesCombo = api.GetEmployeesCombo();
-                }
-            }
-            return ListEmployeesCombo;
-        }
+        //private IList<SPS_EMPLOYEES_Result> SearchEmployeesBaseCombo()
+        //{
+        //    IList<SPS_EMPLOYEES_Result> ListEmployeesCombo = null;
+        //    using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
+        //    {
+        //        {
+        //            ListEmployeesCombo = api.GetEmployeesCombo();
+        //        }
+        //    }
+        //    return ListEmployeesCombo;
+        //}
         
-        private IList<SPS_EMPLOYEES_Result> _EmploCombo = null;
-        public IList<SPS_EMPLOYEES_Result> EmploCombo
-        {
-            get
-            {
-                _EmploCombo = SearchEmployeesBaseCombo();
+        //private IList<SPS_EMPLOYEES_Result> _EmploCombo = null;
+        //public IList<SPS_EMPLOYEES_Result> EmploCombo
+        //{
+        //    get
+        //    {
+        //        _EmploCombo = SearchEmployeesBaseCombo();
 
-                return _EmploCombo;
-            }
-        }
+        //        return _EmploCombo;
+        //    }
+        //}
 
         #region Properties used for Filtering
         string searchText = String.Empty;
@@ -549,8 +549,7 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
             contact.mobile = _Mobile;
             contact.email = _Email;
             contact.bank_account = _BankAccount;
-            contact.social_security_number = _SocialSecurityNumber;
-            contact.roles = _SelectedRole;
+            //contact.roles = _SelectedRole;
             contact.birthdate = _BirthDate;
             contact.arrival_date = _ArrivalDate;
             //contact.address_employees.street_name = _StreetName;

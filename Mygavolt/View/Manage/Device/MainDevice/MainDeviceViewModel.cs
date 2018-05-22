@@ -181,9 +181,9 @@ namespace Mygavolt.View.Manage.Device.MainDevice
             devices device = new devices();
             device.label = "";
             device.version = "";
-            device.IMEI = "";
+            device.imei = "";
             device.mac_address = "";
-            device.system = "";
+            device.systm = "";
 
             IList<devices> ListDevices = null;
             using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
@@ -346,9 +346,9 @@ namespace Mygavolt.View.Manage.Device.MainDevice
 
             int id_contact = 0;
             contact.label = _Label;
-            contact.IMEI = _Imei;
+            contact.imei = _Imei;
             contact.version = _Version;
-            contact.system = _System;
+            contact.systm = _System;
             contact.mac_address = _Mac_address;
 
 

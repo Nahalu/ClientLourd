@@ -58,7 +58,7 @@
                 <DataGridTextColumn Header="Phone" Binding="{Binding phone}"/>
                 <DataGridTextColumn Header="Mobile" Binding="{Binding mobile}"/>
                 <DataGridTextColumn Header="Entreprise" Binding="{Binding business_name}"/>
-                <DataGridTextColumn Header="Adresse du client" Binding="{Binding adress_customers}"/>
+                <DataGridTextColumn Header="Adresse du client" Binding="{Binding address_customers}"/>
                 <DataGridTextColumn Header="Actif" Binding="{Binding isActive}"/>
             </DataGrid.Columns>
         </DataGrid>

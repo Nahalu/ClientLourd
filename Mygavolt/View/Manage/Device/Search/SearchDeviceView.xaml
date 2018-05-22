@@ -52,10 +52,10 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}"/>
                 <DataGridTextColumn Header="Label" Binding="{Binding label}"/>
-                <DataGridTextColumn Header="Système" Binding="{Binding system}"/>
+                <DataGridTextColumn Header="Système" Binding="{Binding systm}"/>
                 <DataGridTextColumn Header="Version" Binding="{Binding version}"/>
-                <DataGridTextColumn Header="IMEI" Binding="{Binding IMEI}"/>
-                <DataGridTextColumn Header="Adresse MAC" Binding="{Binding mac_adress}"/>
+                <DataGridTextColumn Header="IMEI" Binding="{Binding imei}"/>
+                <DataGridTextColumn Header="Adresse MAC" Binding="{Binding mac_address}"/>
             </DataGrid.Columns>
         </DataGrid>
 

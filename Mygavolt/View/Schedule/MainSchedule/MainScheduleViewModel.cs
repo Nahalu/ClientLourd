@@ -72,7 +72,7 @@ namespace Mygavolt.View.Schedule.MainSchedule
             //IList<interventions> interventionsEmpl = null;
             foreach (interventions inter in listInterventions)
             {
-                if (inter.date.Day == Date1.Day)
+                if (inter.dateStart.Day == Date1.Day)
                 {
                     foreach (employees empl in listEmployees)
                     {
@@ -95,7 +95,7 @@ namespace Mygavolt.View.Schedule.MainSchedule
                         }
                     }
                 }
-                else if (inter.date.Day == Date2.Day)
+                else if (inter.dateStart.Day == Date2.Day)
                 {
                     foreach (employees empl in listEmployees)
                     {
@@ -111,7 +111,7 @@ namespace Mygavolt.View.Schedule.MainSchedule
                         }
                     }
                 }
-                else if (inter.date.Day == Date3.Day)
+                else if (inter.dateStart.Day == Date3.Day)
                 {
                     foreach (employees empl in listEmployees)
                     {
@@ -127,7 +127,7 @@ namespace Mygavolt.View.Schedule.MainSchedule
                         }
                     }
                 }
-                else if (inter.date.Day == Date4.Day)
+                else if (inter.dateStart.Day == Date4.Day)
                 {
                     foreach (employees empl in listEmployees)
                     {
@@ -143,7 +143,7 @@ namespace Mygavolt.View.Schedule.MainSchedule
                         }
                     }
                 }
-                else if (inter.date.Day == Date5.Day)
+                else if (inter.dateStart.Day == Date5.Day)
                 {
                     foreach (employees empl in listEmployees)
                     {
@@ -159,7 +159,7 @@ namespace Mygavolt.View.Schedule.MainSchedule
                         }
                     }
                 }
-                else if (inter.date.Day == Date6.Day)
+                else if (inter.dateStart.Day == Date6.Day)
                 {
                     foreach (employees empl in listEmployees)
                     {
@@ -175,7 +175,7 @@ namespace Mygavolt.View.Schedule.MainSchedule
                         }
                     }
                 }
-                else if (inter.date.Day == Date7.Day)
+                else if (inter.dateStart.Day == Date7.Day)
                 {
                     foreach (employees empl in listEmployees)
                     {

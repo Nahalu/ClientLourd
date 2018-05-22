@@ -29,7 +29,7 @@ namespace Mygavolt.APIMygavolt {
         private string countryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int customer_idField;
+        private System.Nullable<int> customer_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Mygavolt.APIMygavolt.customers customersField;
@@ -83,7 +83,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int customer_id {
+        public System.Nullable<int> customer_id {
             get {
                 return this.customer_idField;
             }
@@ -186,7 +186,7 @@ namespace Mygavolt.APIMygavolt {
         private string business_nameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime created_atField;
+        private System.Nullable<System.DateTime> created_atField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string emailField;
@@ -213,7 +213,7 @@ namespace Mygavolt.APIMygavolt {
         private string phoneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime updated_atField;
+        private System.Nullable<System.DateTime> updated_atField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -252,7 +252,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime created_at {
+        public System.Nullable<System.DateTime> created_at {
             get {
                 return this.created_atField;
             }
@@ -369,7 +369,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime updated_at {
+        public System.Nullable<System.DateTime> updated_at {
             get {
                 return this.updated_atField;
             }
@@ -401,16 +401,19 @@ namespace Mygavolt.APIMygavolt {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime created_atField;
+        private System.Nullable<System.DateTime> created_atField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> customer_idField;
+        private int customer_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Mygavolt.APIMygavolt.customers customersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime dateField;
+        private System.DateTime dateEndField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime dateStartField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int employee_idField;
@@ -431,7 +434,7 @@ namespace Mygavolt.APIMygavolt {
         private string reportField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime updated_atField;
+        private System.Nullable<System.DateTime> updated_atField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -444,7 +447,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime created_at {
+        public System.Nullable<System.DateTime> created_at {
             get {
                 return this.created_atField;
             }
@@ -457,7 +460,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> customer_id {
+        public int customer_id {
             get {
                 return this.customer_idField;
             }
@@ -483,14 +486,27 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime date {
+        public System.DateTime dateEnd {
             get {
-                return this.dateField;
+                return this.dateEndField;
             }
             set {
-                if ((this.dateField.Equals(value) != true)) {
-                    this.dateField = value;
-                    this.RaisePropertyChanged("date");
+                if ((this.dateEndField.Equals(value) != true)) {
+                    this.dateEndField = value;
+                    this.RaisePropertyChanged("dateEnd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime dateStart {
+            get {
+                return this.dateStartField;
+            }
+            set {
+                if ((this.dateStartField.Equals(value) != true)) {
+                    this.dateStartField = value;
+                    this.RaisePropertyChanged("dateStart");
                 }
             }
         }
@@ -574,7 +590,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime updated_at {
+        public System.Nullable<System.DateTime> updated_at {
             get {
                 return this.updated_atField;
             }
@@ -609,16 +625,13 @@ namespace Mygavolt.APIMygavolt {
         private Mygavolt.APIMygavolt.address_employees[] address_employeesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime arrival_dateField;
+        private System.Nullable<System.DateTime> arrival_dateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string bank_accountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime birthdateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime created_atField;
+        private System.Nullable<System.DateTime> birthdateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> device_idField;
@@ -645,19 +658,10 @@ namespace Mygavolt.APIMygavolt {
         private string lastnameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string marital_statusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string mobileField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string phoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] pictureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string pwdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int role_idField;
@@ -666,10 +670,7 @@ namespace Mygavolt.APIMygavolt {
         private Mygavolt.APIMygavolt.roles rolesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string social_security_numberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime updated_atField;
+        private System.Nullable<System.DateTime> updated_atField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -695,7 +696,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime arrival_date {
+        public System.Nullable<System.DateTime> arrival_date {
             get {
                 return this.arrival_dateField;
             }
@@ -721,7 +722,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime birthdate {
+        public System.Nullable<System.DateTime> birthdate {
             get {
                 return this.birthdateField;
             }
@@ -729,19 +730,6 @@ namespace Mygavolt.APIMygavolt {
                 if ((this.birthdateField.Equals(value) != true)) {
                     this.birthdateField = value;
                     this.RaisePropertyChanged("birthdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime created_at {
-            get {
-                return this.created_atField;
-            }
-            set {
-                if ((this.created_atField.Equals(value) != true)) {
-                    this.created_atField = value;
-                    this.RaisePropertyChanged("created_at");
                 }
             }
         }
@@ -851,19 +839,6 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string marital_status {
-            get {
-                return this.marital_statusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.marital_statusField, value) != true)) {
-                    this.marital_statusField = value;
-                    this.RaisePropertyChanged("marital_status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string mobile {
             get {
                 return this.mobileField;
@@ -885,32 +860,6 @@ namespace Mygavolt.APIMygavolt {
                 if ((object.ReferenceEquals(this.phoneField, value) != true)) {
                     this.phoneField = value;
                     this.RaisePropertyChanged("phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] picture {
-            get {
-                return this.pictureField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pictureField, value) != true)) {
-                    this.pictureField = value;
-                    this.RaisePropertyChanged("picture");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string pwd {
-            get {
-                return this.pwdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pwdField, value) != true)) {
-                    this.pwdField = value;
-                    this.RaisePropertyChanged("pwd");
                 }
             }
         }
@@ -942,20 +891,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string social_security_number {
-            get {
-                return this.social_security_numberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.social_security_numberField, value) != true)) {
-                    this.social_security_numberField = value;
-                    this.RaisePropertyChanged("social_security_number");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime updated_at {
+        public System.Nullable<System.DateTime> updated_at {
             get {
                 return this.updated_atField;
             }
@@ -987,9 +923,6 @@ namespace Mygavolt.APIMygavolt {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime created_atField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> estimated_timeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1001,9 +934,6 @@ namespace Mygavolt.APIMygavolt {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string labelField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime updated_atField;
-        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -1011,19 +941,6 @@ namespace Mygavolt.APIMygavolt {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime created_at {
-            get {
-                return this.created_atField;
-            }
-            set {
-                if ((this.created_atField.Equals(value) != true)) {
-                    this.created_atField = value;
-                    this.RaisePropertyChanged("created_at");
-                }
             }
         }
         
@@ -1079,19 +996,6 @@ namespace Mygavolt.APIMygavolt {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime updated_at {
-            get {
-                return this.updated_atField;
-            }
-            set {
-                if ((this.updated_atField.Equals(value) != true)) {
-                    this.updated_atField = value;
-                    this.RaisePropertyChanged("updated_at");
-                }
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -1112,16 +1016,13 @@ namespace Mygavolt.APIMygavolt {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IMEIField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime created_atField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Mygavolt.APIMygavolt.employees[] employeesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string imeiField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> isActiveField;
@@ -1130,19 +1031,22 @@ namespace Mygavolt.APIMygavolt {
         private string labelField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> localization_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Mygavolt.APIMygavolt.localizations localizationsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string mac_addressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime purchase_dateField;
+        private System.Nullable<System.DateTime> purchase_dateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string systemField;
+        private string systmField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime updated_atField;
+        private System.Nullable<System.DateTime> updated_atField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string versionField;
@@ -1154,32 +1058,6 @@ namespace Mygavolt.APIMygavolt {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string IMEI {
-            get {
-                return this.IMEIField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IMEIField, value) != true)) {
-                    this.IMEIField = value;
-                    this.RaisePropertyChanged("IMEI");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime created_at {
-            get {
-                return this.created_atField;
-            }
-            set {
-                if ((this.created_atField.Equals(value) != true)) {
-                    this.created_atField = value;
-                    this.RaisePropertyChanged("created_at");
-                }
             }
         }
         
@@ -1205,6 +1083,19 @@ namespace Mygavolt.APIMygavolt {
                 if ((this.idField.Equals(value) != true)) {
                     this.idField = value;
                     this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string imei {
+            get {
+                return this.imeiField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imeiField, value) != true)) {
+                    this.imeiField = value;
+                    this.RaisePropertyChanged("imei");
                 }
             }
         }
@@ -1236,6 +1127,19 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> localization_id {
+            get {
+                return this.localization_idField;
+            }
+            set {
+                if ((this.localization_idField.Equals(value) != true)) {
+                    this.localization_idField = value;
+                    this.RaisePropertyChanged("localization_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public Mygavolt.APIMygavolt.localizations localizations {
             get {
                 return this.localizationsField;
@@ -1262,7 +1166,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime purchase_date {
+        public System.Nullable<System.DateTime> purchase_date {
             get {
                 return this.purchase_dateField;
             }
@@ -1275,20 +1179,20 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string system {
+        public string systm {
             get {
-                return this.systemField;
+                return this.systmField;
             }
             set {
-                if ((object.ReferenceEquals(this.systemField, value) != true)) {
-                    this.systemField = value;
-                    this.RaisePropertyChanged("system");
+                if ((object.ReferenceEquals(this.systmField, value) != true)) {
+                    this.systmField = value;
+                    this.RaisePropertyChanged("systm");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime updated_at {
+        public System.Nullable<System.DateTime> updated_at {
             get {
                 return this.updated_atField;
             }
@@ -1333,9 +1237,6 @@ namespace Mygavolt.APIMygavolt {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime created_atField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Mygavolt.APIMygavolt.employees[] employeesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1344,9 +1245,6 @@ namespace Mygavolt.APIMygavolt {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string labelField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime updated_atField;
-        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -1354,19 +1252,6 @@ namespace Mygavolt.APIMygavolt {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime created_at {
-            get {
-                return this.created_atField;
-            }
-            set {
-                if ((this.created_atField.Equals(value) != true)) {
-                    this.created_atField = value;
-                    this.RaisePropertyChanged("created_at");
-                }
             }
         }
         
@@ -1409,19 +1294,6 @@ namespace Mygavolt.APIMygavolt {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime updated_at {
-            get {
-                return this.updated_atField;
-            }
-            set {
-                if ((this.updated_atField.Equals(value) != true)) {
-                    this.updated_atField = value;
-                    this.RaisePropertyChanged("updated_at");
-                }
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -1448,7 +1320,7 @@ namespace Mygavolt.APIMygavolt {
         private string countryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int employee_idField;
+        private System.Nullable<int> employee_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Mygavolt.APIMygavolt.employees employeesField;
@@ -1502,7 +1374,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int employee_id {
+        public System.Nullable<int> employee_id {
             get {
                 return this.employee_idField;
             }
@@ -1599,16 +1471,16 @@ namespace Mygavolt.APIMygavolt {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int device_idField;
+        private Mygavolt.APIMygavolt.devices[] devicesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Mygavolt.APIMygavolt.devices devicesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ingField;
+        private int idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string latField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string lngField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string positionField;
@@ -1624,20 +1496,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int device_id {
-            get {
-                return this.device_idField;
-            }
-            set {
-                if ((this.device_idField.Equals(value) != true)) {
-                    this.device_idField = value;
-                    this.RaisePropertyChanged("device_id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Mygavolt.APIMygavolt.devices devices {
+        public Mygavolt.APIMygavolt.devices[] devices {
             get {
                 return this.devicesField;
             }
@@ -1645,219 +1504,6 @@ namespace Mygavolt.APIMygavolt {
                 if ((object.ReferenceEquals(this.devicesField, value) != true)) {
                     this.devicesField = value;
                     this.RaisePropertyChanged("devices");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ing {
-            get {
-                return this.ingField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ingField, value) != true)) {
-                    this.ingField = value;
-                    this.RaisePropertyChanged("ing");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string lat {
-            get {
-                return this.latField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.latField, value) != true)) {
-                    this.latField = value;
-                    this.RaisePropertyChanged("lat");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string position {
-            get {
-                return this.positionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.positionField, value) != true)) {
-                    this.positionField = value;
-                    this.RaisePropertyChanged("position");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SPS_EMPLOYEES_Result", Namespace="http://schemas.datacontract.org/2004/07/WebService")]
-    [System.SerializableAttribute()]
-    public partial class SPS_EMPLOYEES_Result : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime arrival_dateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string bank_accountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime birthdateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime created_atField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> device_idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string emailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string firstnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> isActiveField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string lastnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string marital_statusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mobileField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string phoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] pictureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string pwdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int role_idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string social_security_numberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime updated_atField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime arrival_date {
-            get {
-                return this.arrival_dateField;
-            }
-            set {
-                if ((this.arrival_dateField.Equals(value) != true)) {
-                    this.arrival_dateField = value;
-                    this.RaisePropertyChanged("arrival_date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string bank_account {
-            get {
-                return this.bank_accountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.bank_accountField, value) != true)) {
-                    this.bank_accountField = value;
-                    this.RaisePropertyChanged("bank_account");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime birthdate {
-            get {
-                return this.birthdateField;
-            }
-            set {
-                if ((this.birthdateField.Equals(value) != true)) {
-                    this.birthdateField = value;
-                    this.RaisePropertyChanged("birthdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime created_at {
-            get {
-                return this.created_atField;
-            }
-            set {
-                if ((this.created_atField.Equals(value) != true)) {
-                    this.created_atField = value;
-                    this.RaisePropertyChanged("created_at");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> device_id {
-            get {
-                return this.device_idField;
-            }
-            set {
-                if ((this.device_idField.Equals(value) != true)) {
-                    this.device_idField = value;
-                    this.RaisePropertyChanged("device_id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string email {
-            get {
-                return this.emailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.emailField, value) != true)) {
-                    this.emailField = value;
-                    this.RaisePropertyChanged("email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string firstname {
-            get {
-                return this.firstnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.firstnameField, value) != true)) {
-                    this.firstnameField = value;
-                    this.RaisePropertyChanged("firstname");
                 }
             }
         }
@@ -1876,131 +1522,40 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> isActive {
+        public string lat {
             get {
-                return this.isActiveField;
+                return this.latField;
             }
             set {
-                if ((this.isActiveField.Equals(value) != true)) {
-                    this.isActiveField = value;
-                    this.RaisePropertyChanged("isActive");
+                if ((object.ReferenceEquals(this.latField, value) != true)) {
+                    this.latField = value;
+                    this.RaisePropertyChanged("lat");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string lastname {
+        public string lng {
             get {
-                return this.lastnameField;
+                return this.lngField;
             }
             set {
-                if ((object.ReferenceEquals(this.lastnameField, value) != true)) {
-                    this.lastnameField = value;
-                    this.RaisePropertyChanged("lastname");
+                if ((object.ReferenceEquals(this.lngField, value) != true)) {
+                    this.lngField = value;
+                    this.RaisePropertyChanged("lng");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string marital_status {
+        public string position {
             get {
-                return this.marital_statusField;
+                return this.positionField;
             }
             set {
-                if ((object.ReferenceEquals(this.marital_statusField, value) != true)) {
-                    this.marital_statusField = value;
-                    this.RaisePropertyChanged("marital_status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mobile {
-            get {
-                return this.mobileField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mobileField, value) != true)) {
-                    this.mobileField = value;
-                    this.RaisePropertyChanged("mobile");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string phone {
-            get {
-                return this.phoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.phoneField, value) != true)) {
-                    this.phoneField = value;
-                    this.RaisePropertyChanged("phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] picture {
-            get {
-                return this.pictureField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pictureField, value) != true)) {
-                    this.pictureField = value;
-                    this.RaisePropertyChanged("picture");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string pwd {
-            get {
-                return this.pwdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pwdField, value) != true)) {
-                    this.pwdField = value;
-                    this.RaisePropertyChanged("pwd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int role_id {
-            get {
-                return this.role_idField;
-            }
-            set {
-                if ((this.role_idField.Equals(value) != true)) {
-                    this.role_idField = value;
-                    this.RaisePropertyChanged("role_id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string social_security_number {
-            get {
-                return this.social_security_numberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.social_security_numberField, value) != true)) {
-                    this.social_security_numberField = value;
-                    this.RaisePropertyChanged("social_security_number");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime updated_at {
-            get {
-                return this.updated_atField;
-            }
-            set {
-                if ((this.updated_atField.Equals(value) != true)) {
-                    this.updated_atField = value;
-                    this.RaisePropertyChanged("updated_at");
+                if ((object.ReferenceEquals(this.positionField, value) != true)) {
+                    this.positionField = value;
+                    this.RaisePropertyChanged("position");
                 }
             }
         }
@@ -2086,16 +1641,13 @@ namespace Mygavolt.APIMygavolt {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime arrival_dateField;
+        private System.Nullable<System.DateTime> arrival_dateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string bank_accountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime birthdateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime created_atField;
+        private System.Nullable<System.DateTime> birthdateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> device_idField;
@@ -2116,28 +1668,16 @@ namespace Mygavolt.APIMygavolt {
         private string lastnameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string marital_statusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string mobileField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string phoneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] pictureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string pwdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int role_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string social_security_numberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime updated_atField;
+        private System.Nullable<System.DateTime> updated_atField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2150,7 +1690,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime arrival_date {
+        public System.Nullable<System.DateTime> arrival_date {
             get {
                 return this.arrival_dateField;
             }
@@ -2176,7 +1716,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime birthdate {
+        public System.Nullable<System.DateTime> birthdate {
             get {
                 return this.birthdateField;
             }
@@ -2184,19 +1724,6 @@ namespace Mygavolt.APIMygavolt {
                 if ((this.birthdateField.Equals(value) != true)) {
                     this.birthdateField = value;
                     this.RaisePropertyChanged("birthdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime created_at {
-            get {
-                return this.created_atField;
-            }
-            set {
-                if ((this.created_atField.Equals(value) != true)) {
-                    this.created_atField = value;
-                    this.RaisePropertyChanged("created_at");
                 }
             }
         }
@@ -2280,19 +1807,6 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string marital_status {
-            get {
-                return this.marital_statusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.marital_statusField, value) != true)) {
-                    this.marital_statusField = value;
-                    this.RaisePropertyChanged("marital_status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string mobile {
             get {
                 return this.mobileField;
@@ -2319,32 +1833,6 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] picture {
-            get {
-                return this.pictureField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pictureField, value) != true)) {
-                    this.pictureField = value;
-                    this.RaisePropertyChanged("picture");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string pwd {
-            get {
-                return this.pwdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pwdField, value) != true)) {
-                    this.pwdField = value;
-                    this.RaisePropertyChanged("pwd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int role_id {
             get {
                 return this.role_idField;
@@ -2358,20 +1846,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string social_security_number {
-            get {
-                return this.social_security_numberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.social_security_numberField, value) != true)) {
-                    this.social_security_numberField = value;
-                    this.RaisePropertyChanged("social_security_number");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime updated_at {
+        public System.Nullable<System.DateTime> updated_at {
             get {
                 return this.updated_atField;
             }
@@ -2403,16 +1878,13 @@ namespace Mygavolt.APIMygavolt {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime arrival_dateField;
+        private System.Nullable<System.DateTime> arrival_dateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string bank_accountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime birthdateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime created_atField;
+        private System.Nullable<System.DateTime> birthdateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> device_idField;
@@ -2433,28 +1905,16 @@ namespace Mygavolt.APIMygavolt {
         private string lastnameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string marital_statusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string mobileField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string phoneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] pictureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string pwdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int role_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string social_security_numberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime updated_atField;
+        private System.Nullable<System.DateTime> updated_atField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2467,7 +1927,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime arrival_date {
+        public System.Nullable<System.DateTime> arrival_date {
             get {
                 return this.arrival_dateField;
             }
@@ -2493,7 +1953,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime birthdate {
+        public System.Nullable<System.DateTime> birthdate {
             get {
                 return this.birthdateField;
             }
@@ -2501,19 +1961,6 @@ namespace Mygavolt.APIMygavolt {
                 if ((this.birthdateField.Equals(value) != true)) {
                     this.birthdateField = value;
                     this.RaisePropertyChanged("birthdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime created_at {
-            get {
-                return this.created_atField;
-            }
-            set {
-                if ((this.created_atField.Equals(value) != true)) {
-                    this.created_atField = value;
-                    this.RaisePropertyChanged("created_at");
                 }
             }
         }
@@ -2597,19 +2044,6 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string marital_status {
-            get {
-                return this.marital_statusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.marital_statusField, value) != true)) {
-                    this.marital_statusField = value;
-                    this.RaisePropertyChanged("marital_status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string mobile {
             get {
                 return this.mobileField;
@@ -2636,32 +2070,6 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] picture {
-            get {
-                return this.pictureField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pictureField, value) != true)) {
-                    this.pictureField = value;
-                    this.RaisePropertyChanged("picture");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string pwd {
-            get {
-                return this.pwdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pwdField, value) != true)) {
-                    this.pwdField = value;
-                    this.RaisePropertyChanged("pwd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public int role_id {
             get {
                 return this.role_idField;
@@ -2675,20 +2083,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string social_security_number {
-            get {
-                return this.social_security_numberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.social_security_numberField, value) != true)) {
-                    this.social_security_numberField = value;
-                    this.RaisePropertyChanged("social_security_number");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime updated_at {
+        public System.Nullable<System.DateTime> updated_at {
             get {
                 return this.updated_atField;
             }
@@ -2744,12 +2139,6 @@ namespace Mygavolt.APIMygavolt {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEmployees", ReplyAction="http://tempuri.org/IService1/GetEmployeesResponse")]
         System.Threading.Tasks.Task<Mygavolt.APIMygavolt.employees[]> GetEmployeesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEmployeesCombo", ReplyAction="http://tempuri.org/IService1/GetEmployeesComboResponse")]
-        Mygavolt.APIMygavolt.SPS_EMPLOYEES_Result[] GetEmployeesCombo();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEmployeesCombo", ReplyAction="http://tempuri.org/IService1/GetEmployeesComboResponse")]
-        System.Threading.Tasks.Task<Mygavolt.APIMygavolt.SPS_EMPLOYEES_Result[]> GetEmployeesComboAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetInterventions", ReplyAction="http://tempuri.org/IService1/GetInterventionsResponse")]
         Mygavolt.APIMygavolt.interventions[] GetInterventions();
         
@@ -2791,12 +2180,6 @@ namespace Mygavolt.APIMygavolt {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEmployeesInactives", ReplyAction="http://tempuri.org/IService1/GetEmployeesInactivesResponse")]
         System.Threading.Tasks.Task<Mygavolt.APIMygavolt.SPS_EMPLOYEESINACTIVE_Result[]> GetEmployeesInactivesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetAddressCustomer", ReplyAction="http://tempuri.org/IService1/SetAddressCustomerResponse")]
-        int SetAddressCustomer(Mygavolt.APIMygavolt.address_customers a_c);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetAddressCustomer", ReplyAction="http://tempuri.org/IService1/SetAddressCustomerResponse")]
-        System.Threading.Tasks.Task<int> SetAddressCustomerAsync(Mygavolt.APIMygavolt.address_customers a_c);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetCustomer", ReplyAction="http://tempuri.org/IService1/SetCustomerResponse")]
         int SetCustomer(Mygavolt.APIMygavolt.customers c);
@@ -2998,14 +2381,6 @@ namespace Mygavolt.APIMygavolt {
             return base.Channel.GetEmployeesAsync();
         }
         
-        public Mygavolt.APIMygavolt.SPS_EMPLOYEES_Result[] GetEmployeesCombo() {
-            return base.Channel.GetEmployeesCombo();
-        }
-        
-        public System.Threading.Tasks.Task<Mygavolt.APIMygavolt.SPS_EMPLOYEES_Result[]> GetEmployeesComboAsync() {
-            return base.Channel.GetEmployeesComboAsync();
-        }
-        
         public Mygavolt.APIMygavolt.interventions[] GetInterventions() {
             return base.Channel.GetInterventions();
         }
@@ -3060,14 +2435,6 @@ namespace Mygavolt.APIMygavolt {
         
         public System.Threading.Tasks.Task<Mygavolt.APIMygavolt.SPS_EMPLOYEESINACTIVE_Result[]> GetEmployeesInactivesAsync() {
             return base.Channel.GetEmployeesInactivesAsync();
-        }
-        
-        public int SetAddressCustomer(Mygavolt.APIMygavolt.address_customers a_c) {
-            return base.Channel.SetAddressCustomer(a_c);
-        }
-        
-        public System.Threading.Tasks.Task<int> SetAddressCustomerAsync(Mygavolt.APIMygavolt.address_customers a_c) {
-            return base.Channel.SetAddressCustomerAsync(a_c);
         }
         
         public int SetCustomer(Mygavolt.APIMygavolt.customers c) {
