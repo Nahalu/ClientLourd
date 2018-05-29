@@ -7,7 +7,7 @@
              xmlns:ValidationRules="clr-namespace:Mygavolt.ValidationRules"
              mc:Ignorable="d" Height="770.811" Width="453.541">
     <Grid >
-        <Grid Margin="0,0,0,408">
+        <Grid Margin="0,0,-0.4,363.2">
             <Label Content="Ajouter un Employé" HorizontalAlignment="Left" Margin="14,10,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Roboto" Foreground="#FFB6B6B6"/>
 
             <Label Content="Prénom" HorizontalAlignment="Left" Margin="66,44,0,0" VerticalAlignment="Top" FontFamily="Roboto" Foreground="#FFB6B6B6"/>
@@ -111,7 +111,7 @@
             </TextBox>
 
             <Label Content="Date de naissance" HorizontalAlignment="Left" Margin="34,287,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
-            <DatePicker SelectedDate="{Binding BirthDate}" Margin="27,313,291,436" />
+            <DatePicker SelectedDate="{Binding BirthDate}" Margin="41,318,325,64" Foreground="#FFB6B6B6" />
 
             <Label Content="Date début contrat" HorizontalAlignment="Left" Margin="190,44,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
             <DatePicker SelectedDate="{Binding ArrivalDate}" Margin="183,70,135,680" />
@@ -230,25 +230,7 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
 
-            <Label Content="Sécurité Sociale" HorizontalAlignment="Left" Margin="324,95,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="318,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="255">
-                <TextBox.Text>
-                    <Binding Path="SocialSecurityNumber" UpdateSourceTrigger="PropertyChanged">
-                        <Binding.ValidationRules>
-                            <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </TextBox.Text>
-                <Validation.ErrorTemplate>
-                    <ControlTemplate>
-                        <StackPanel>
-                            <!-- Placeholder for the TextBox itself -->
-                            <AdornedElementPlaceholder x:Name="textBox"/>
-                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
-                        </StackPanel>
-                    </ControlTemplate>
-                </Validation.ErrorTemplate>
-            </TextBox>
+          
 
             <Label Content="Numéro de banque" HorizontalAlignment="Left" Margin="328,141,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6"/>
             <TextBox HorizontalAlignment="Left" Height="23" Margin="318,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="255">
@@ -275,7 +257,7 @@
 
         </Grid>
 
-        <Grid Margin="0,368,0,0">
+        <Grid Margin="0,408,-0.4,0.2">
             <DataGrid ItemsSource="{Binding ProduitSelectionne}" SelectedItem="{Binding ProduitASupprimer}" HorizontalAlignment="Left" Height="204" Margin="308,154,0,0" VerticalAlignment="Top" Width="126" AutoGenerateColumns="False" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Label" Binding="{Binding label}" MinWidth="250" Width="Auto" />

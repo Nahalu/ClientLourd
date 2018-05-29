@@ -5,8 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mygavolt.View.Map"
              xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
-             mc:Ignorable="d" Height="437.091" Width="437.091">
+             mc:Ignorable="d" Height="585.506" Width="983.455">
     <Grid>
-        <m:Map CredentialsProvider="AlxUxDzyNQUSo6z1wmTbghqdkI8_RKJwCuZv5kiBSwLBQk_tadFUhmXJ3ZIHwURT"/>
+        <m:Map CredentialsProvider="AlxUxDzyNQUSo6z1wmTbghqdkI8_RKJwCuZv5kiBSwLBQk_tadFUhmXJ3ZIHwURT" Center="48.864716, 2.349014"
+           ZoomLevel="6" Margin="0,0,416.2,-0.4">
+            <m:MapItemsControl ItemsSource="{Binding aListPushpin}">
+                <m:Pushpin Location="47.620574,-122.34942"/>
+            </m:MapItemsControl>
+        </m:Map>
     </Grid>
 </UserControl>

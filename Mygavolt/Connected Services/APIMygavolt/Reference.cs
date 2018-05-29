@@ -29,13 +29,10 @@ namespace Mygavolt.APIMygavolt {
         private string countryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> customer_idField;
+        private int customer_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Mygavolt.APIMygavolt.customers customersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string street_nameField;
@@ -83,7 +80,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> customer_id {
+        public int customer_id {
             get {
                 return this.customer_idField;
             }
@@ -104,19 +101,6 @@ namespace Mygavolt.APIMygavolt {
                 if ((object.ReferenceEquals(this.customersField, value) != true)) {
                     this.customersField = value;
                     this.RaisePropertyChanged("customers");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
                 }
             }
         }
@@ -180,7 +164,7 @@ namespace Mygavolt.APIMygavolt {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Mygavolt.APIMygavolt.address_customers[] address_customersField;
+        private Mygavolt.APIMygavolt.address_customers address_customersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string business_nameField;
@@ -226,7 +210,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Mygavolt.APIMygavolt.address_customers[] address_customers {
+        public Mygavolt.APIMygavolt.address_customers address_customers {
             get {
                 return this.address_customersField;
             }
@@ -622,7 +606,7 @@ namespace Mygavolt.APIMygavolt {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Mygavolt.APIMygavolt.address_employees[] address_employeesField;
+        private Mygavolt.APIMygavolt.address_employees address_employeesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> arrival_dateField;
@@ -683,7 +667,7 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Mygavolt.APIMygavolt.address_employees[] address_employees {
+        public Mygavolt.APIMygavolt.address_employees address_employees {
             get {
                 return this.address_employeesField;
             }
@@ -1008,6 +992,147 @@ namespace Mygavolt.APIMygavolt {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="address_employees", Namespace="http://schemas.datacontract.org/2004/07/WebService")]
+    [System.SerializableAttribute()]
+    public partial class address_employees : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string cityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string countryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int employee_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Mygavolt.APIMygavolt.employees employeesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string street_nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string street_numberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string zip_codeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string city {
+            get {
+                return this.cityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.cityField, value) != true)) {
+                    this.cityField = value;
+                    this.RaisePropertyChanged("city");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string country {
+            get {
+                return this.countryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.countryField, value) != true)) {
+                    this.countryField = value;
+                    this.RaisePropertyChanged("country");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int employee_id {
+            get {
+                return this.employee_idField;
+            }
+            set {
+                if ((this.employee_idField.Equals(value) != true)) {
+                    this.employee_idField = value;
+                    this.RaisePropertyChanged("employee_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Mygavolt.APIMygavolt.employees employees {
+            get {
+                return this.employeesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.employeesField, value) != true)) {
+                    this.employeesField = value;
+                    this.RaisePropertyChanged("employees");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string street_name {
+            get {
+                return this.street_nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.street_nameField, value) != true)) {
+                    this.street_nameField = value;
+                    this.RaisePropertyChanged("street_name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string street_number {
+            get {
+                return this.street_numberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.street_numberField, value) != true)) {
+                    this.street_numberField = value;
+                    this.RaisePropertyChanged("street_number");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string zip_code {
+            get {
+                return this.zip_codeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.zip_codeField, value) != true)) {
+                    this.zip_codeField = value;
+                    this.RaisePropertyChanged("zip_code");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="devices", Namespace="http://schemas.datacontract.org/2004/07/WebService")]
     [System.SerializableAttribute()]
     public partial class devices : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1029,9 +1154,6 @@ namespace Mygavolt.APIMygavolt {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string labelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> localization_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Mygavolt.APIMygavolt.localizations localizationsField;
@@ -1122,19 +1244,6 @@ namespace Mygavolt.APIMygavolt {
                 if ((object.ReferenceEquals(this.labelField, value) != true)) {
                     this.labelField = value;
                     this.RaisePropertyChanged("label");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> localization_id {
-            get {
-                return this.localization_idField;
-            }
-            set {
-                if ((this.localization_idField.Equals(value) != true)) {
-                    this.localization_idField = value;
-                    this.RaisePropertyChanged("localization_id");
                 }
             }
         }
@@ -1306,163 +1415,6 @@ namespace Mygavolt.APIMygavolt {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="address_employees", Namespace="http://schemas.datacontract.org/2004/07/WebService")]
-    [System.SerializableAttribute()]
-    public partial class address_employees : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string countryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> employee_idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Mygavolt.APIMygavolt.employees employeesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string street_nameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string street_numberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string zip_codeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string city {
-            get {
-                return this.cityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cityField, value) != true)) {
-                    this.cityField = value;
-                    this.RaisePropertyChanged("city");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string country {
-            get {
-                return this.countryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.countryField, value) != true)) {
-                    this.countryField = value;
-                    this.RaisePropertyChanged("country");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> employee_id {
-            get {
-                return this.employee_idField;
-            }
-            set {
-                if ((this.employee_idField.Equals(value) != true)) {
-                    this.employee_idField = value;
-                    this.RaisePropertyChanged("employee_id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Mygavolt.APIMygavolt.employees employees {
-            get {
-                return this.employeesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.employeesField, value) != true)) {
-                    this.employeesField = value;
-                    this.RaisePropertyChanged("employees");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string street_name {
-            get {
-                return this.street_nameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.street_nameField, value) != true)) {
-                    this.street_nameField = value;
-                    this.RaisePropertyChanged("street_name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string street_number {
-            get {
-                return this.street_numberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.street_numberField, value) != true)) {
-                    this.street_numberField = value;
-                    this.RaisePropertyChanged("street_number");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string zip_code {
-            get {
-                return this.zip_codeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.zip_codeField, value) != true)) {
-                    this.zip_codeField = value;
-                    this.RaisePropertyChanged("zip_code");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="localizations", Namespace="http://schemas.datacontract.org/2004/07/WebService")]
     [System.SerializableAttribute()]
     public partial class localizations : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1471,10 +1423,10 @@ namespace Mygavolt.APIMygavolt {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Mygavolt.APIMygavolt.devices[] devicesField;
+        private int device_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
+        private Mygavolt.APIMygavolt.devices devicesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string latField;
@@ -1496,7 +1448,20 @@ namespace Mygavolt.APIMygavolt {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Mygavolt.APIMygavolt.devices[] devices {
+        public int device_id {
+            get {
+                return this.device_idField;
+            }
+            set {
+                if ((this.device_idField.Equals(value) != true)) {
+                    this.device_idField = value;
+                    this.RaisePropertyChanged("device_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Mygavolt.APIMygavolt.devices devices {
             get {
                 return this.devicesField;
             }
@@ -1504,19 +1469,6 @@ namespace Mygavolt.APIMygavolt {
                 if ((object.ReferenceEquals(this.devicesField, value) != true)) {
                     this.devicesField = value;
                     this.RaisePropertyChanged("devices");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
                 }
             }
         }
@@ -2182,10 +2134,10 @@ namespace Mygavolt.APIMygavolt {
         System.Threading.Tasks.Task<Mygavolt.APIMygavolt.SPS_EMPLOYEESINACTIVE_Result[]> GetEmployeesInactivesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetCustomer", ReplyAction="http://tempuri.org/IService1/SetCustomerResponse")]
-        int SetCustomer(Mygavolt.APIMygavolt.customers c);
+        int SetCustomer(Mygavolt.APIMygavolt.customers c, Mygavolt.APIMygavolt.address_customers ac);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetCustomer", ReplyAction="http://tempuri.org/IService1/SetCustomerResponse")]
-        System.Threading.Tasks.Task<int> SetCustomerAsync(Mygavolt.APIMygavolt.customers c);
+        System.Threading.Tasks.Task<int> SetCustomerAsync(Mygavolt.APIMygavolt.customers c, Mygavolt.APIMygavolt.address_customers ac);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetDevice", ReplyAction="http://tempuri.org/IService1/SetDeviceResponse")]
         int SetDevice(Mygavolt.APIMygavolt.devices d);
@@ -2194,10 +2146,10 @@ namespace Mygavolt.APIMygavolt {
         System.Threading.Tasks.Task<int> SetDeviceAsync(Mygavolt.APIMygavolt.devices d);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetEmployee", ReplyAction="http://tempuri.org/IService1/SetEmployeeResponse")]
-        int SetEmployee(Mygavolt.APIMygavolt.employees e);
+        int SetEmployee(Mygavolt.APIMygavolt.employees e, Mygavolt.APIMygavolt.address_employees ae);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetEmployee", ReplyAction="http://tempuri.org/IService1/SetEmployeeResponse")]
-        System.Threading.Tasks.Task<int> SetEmployeeAsync(Mygavolt.APIMygavolt.employees e);
+        System.Threading.Tasks.Task<int> SetEmployeeAsync(Mygavolt.APIMygavolt.employees e, Mygavolt.APIMygavolt.address_employees ae);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetIntervention", ReplyAction="http://tempuri.org/IService1/SetInterventionResponse")]
         int SetIntervention(Mygavolt.APIMygavolt.interventions i);
@@ -2437,12 +2389,12 @@ namespace Mygavolt.APIMygavolt {
             return base.Channel.GetEmployeesInactivesAsync();
         }
         
-        public int SetCustomer(Mygavolt.APIMygavolt.customers c) {
-            return base.Channel.SetCustomer(c);
+        public int SetCustomer(Mygavolt.APIMygavolt.customers c, Mygavolt.APIMygavolt.address_customers ac) {
+            return base.Channel.SetCustomer(c, ac);
         }
         
-        public System.Threading.Tasks.Task<int> SetCustomerAsync(Mygavolt.APIMygavolt.customers c) {
-            return base.Channel.SetCustomerAsync(c);
+        public System.Threading.Tasks.Task<int> SetCustomerAsync(Mygavolt.APIMygavolt.customers c, Mygavolt.APIMygavolt.address_customers ac) {
+            return base.Channel.SetCustomerAsync(c, ac);
         }
         
         public int SetDevice(Mygavolt.APIMygavolt.devices d) {
@@ -2453,12 +2405,12 @@ namespace Mygavolt.APIMygavolt {
             return base.Channel.SetDeviceAsync(d);
         }
         
-        public int SetEmployee(Mygavolt.APIMygavolt.employees e) {
-            return base.Channel.SetEmployee(e);
+        public int SetEmployee(Mygavolt.APIMygavolt.employees e, Mygavolt.APIMygavolt.address_employees ae) {
+            return base.Channel.SetEmployee(e, ae);
         }
         
-        public System.Threading.Tasks.Task<int> SetEmployeeAsync(Mygavolt.APIMygavolt.employees e) {
-            return base.Channel.SetEmployeeAsync(e);
+        public System.Threading.Tasks.Task<int> SetEmployeeAsync(Mygavolt.APIMygavolt.employees e, Mygavolt.APIMygavolt.address_employees ae) {
+            return base.Channel.SetEmployeeAsync(e, ae);
         }
         
         public int SetIntervention(Mygavolt.APIMygavolt.interventions i) {

@@ -541,7 +541,7 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
         {
 
             employees contact = new employees();
-
+            address_employees ae = new address_employees();
             int id_contact = 0;
             contact.lastname = _Lastname;
             contact.firstname = _Firstname;
@@ -549,17 +549,17 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
             contact.mobile = _Mobile;
             contact.email = _Email;
             contact.bank_account = _BankAccount;
-            //contact.roles = _SelectedRole;
+            contact.roles = _SelectedRole;
             contact.birthdate = _BirthDate;
             contact.arrival_date = _ArrivalDate;
-            //contact.address_employees.street_name = _StreetName;
-            //contact.street_number = _StreetNumber;
-            //contact.zip_code = _ZipCode;
-            //contact.city = _City;
-            //contact.country = _Country;
+            ae.street_name = _StreetName;
+            ae.street_number = _StreetNumber;
+            ae.zip_code = _ZipCode;
+            ae.city = _City;
+            ae.country = _Country;
             using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
             {
-                    id_contact = api.SetEmployee(contact);
+                    id_contact = api.SetEmployee(contact, ae);
             }
             if (id_contact > 0)
             {
@@ -775,25 +775,25 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
             return listEmployee;
         }
 
-        private SPS_EMPLOYEESACTIVE_Result _SelectedEmployeeD = null;
-        public SPS_EMPLOYEESACTIVE_Result SelectedEmployeeD
-        {
-            get
-            {
-                if (_SelectedEmployeeD == null)
-                {
-                    _SelectedEmployeeD = _Employees[0];
-                }
-                return _SelectedEmployeeD;
-            }
-            set
-            {
-                if (_SelectedEmployeeD != value)
-                {
-                    _SelectedEmployeeD = value;
-                }
-            }
-        }
+        //private SPS_EMPLOYEESACTIVE_Result _SelectedEmployeeD = null;
+        //public SPS_EMPLOYEESACTIVE_Result SelectedEmployeeD
+        //{
+        //    get
+        //    {
+        //        if (_SelectedEmployeeD == null)
+        //        {
+        //            _SelectedEmployeeD = _Employees[0];
+        //        }
+        //        return _SelectedEmployeeD;
+        //    }
+        //    set
+        //    {
+        //        if (_SelectedEmployeeD != value)
+        //        {
+        //            _SelectedEmployeeD = value;
+        //        }
+        //    }
+        //}
 
         // Une liste de matériel provennant de la base 
         private IList<devices> _DeviceBase;

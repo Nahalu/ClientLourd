@@ -38,7 +38,7 @@
             <TextBox.Text>
                 <Binding Path="Imei" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
-                        <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>
@@ -98,7 +98,7 @@
             <TextBox.Text>
                 <Binding Path="Mac_address" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
-                        <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox.Text>

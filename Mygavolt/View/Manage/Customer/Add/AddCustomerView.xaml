@@ -16,7 +16,7 @@
         <TextBox.Text>
             <Binding Path="Firstname" UpdateSourceTrigger="PropertyChanged">
                 <Binding.ValidationRules>
-                    <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                    <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
                 </Binding.ValidationRules>
             </Binding>
         </TextBox.Text>
@@ -36,7 +36,7 @@
             <TextBox.Text>
             <Binding Path="Lastname" UpdateSourceTrigger="PropertyChanged">
                 <Binding.ValidationRules>
-                    <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
                 </Binding.ValidationRules>
             </Binding>
         </TextBox.Text>
@@ -56,7 +56,7 @@
         <TextBox.Text>
             <Binding Path="Email" UpdateSourceTrigger="PropertyChanged">
                 <Binding.ValidationRules>
-                    <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
                 </Binding.ValidationRules>
             </Binding>
         </TextBox.Text>
@@ -76,7 +76,7 @@
         <TextBox.Text>
             <Binding Path="Phone" UpdateSourceTrigger="PropertyChanged">
                 <Binding.ValidationRules>
-                    <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
                 </Binding.ValidationRules>
             </Binding>
         </TextBox.Text>
@@ -96,7 +96,7 @@
         <TextBox.Text>
             <Binding Path="Mobile" UpdateSourceTrigger="PropertyChanged">
                 <Binding.ValidationRules>
-                    <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
                 </Binding.ValidationRules>
             </Binding>
         </TextBox.Text>
@@ -110,13 +110,116 @@
             </ControlTemplate>
         </Validation.ErrorTemplate>
         </TextBox>
-    
+
+
+
+
+        <Label Content="Numéro de rue" HorizontalAlignment="Left" Margin="359,56,0,0" Foreground="#FFB6B6B6" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="75">
+            <TextBox.Text>
+                <Binding Path="StreetNumber" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+        <Label Content="Nom de rue" HorizontalAlignment="Left" Margin="359,101,0,0" Foreground="#FFB6B6B6" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="75">
+            <TextBox.Text>
+                <Binding Path="StreetName" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+        <Label Content="Code Postal" HorizontalAlignment="Left" Margin="363,141,0,0" Foreground="#FFB6B6B6" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="255">
+            <TextBox.Text>
+                <Binding Path="ZipCode" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+        <Label Content="Ville" HorizontalAlignment="Left" Margin="381,181,0,0" Foreground="#FFB6B6B6" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="15">
+            <TextBox.Text>
+                <Binding Path="City" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
+        <Label Content="Pays" HorizontalAlignment="Left" Margin="378,223,0,0" Foreground="#FFB6B6B6" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="330,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="15">
+            <TextBox.Text>
+                <Binding Path="Country" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+
         <Label Content="Nom de la société" HorizontalAlignment="Left" Margin="162,261,0,0" Foreground="#FFB6B6B6" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="156,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MaxLength="255">
         <TextBox.Text>
             <Binding Path="BusinessName" UpdateSourceTrigger="PropertyChanged">
                 <Binding.ValidationRules>
-                    <ValidationRules:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
                 </Binding.ValidationRules>
             </Binding>
         </TextBox.Text>

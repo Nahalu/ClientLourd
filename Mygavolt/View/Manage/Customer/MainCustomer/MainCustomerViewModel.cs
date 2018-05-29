@@ -251,6 +251,84 @@ namespace Mygavolt.View.Manage.Customer.MainCustomer
                 }
             }
         }
+
+
+
+        private string _StreetNumber = "";
+        public string StreetNumber
+        {
+            get
+            {
+                return _StreetNumber;
+            }
+            set
+            {
+                if (_StreetNumber != value)
+                {
+                    _StreetNumber = value;
+                }
+            }
+        }
+        private string _StreetName = "";
+        public string StreetName
+        {
+            get
+            {
+                return _StreetName;
+            }
+            set
+            {
+                if (_StreetName != value)
+                {
+                    _StreetName = value;
+                }
+            }
+        }
+        private string _ZipCode = "";
+        public string ZipCode
+        {
+            get
+            {
+                return _ZipCode;
+            }
+            set
+            {
+                if (_ZipCode != value)
+                {
+                    _ZipCode = value;
+                }
+            }
+        }
+        private string _City = "";
+        public string City
+        {
+            get
+            {
+                return _City;
+            }
+            set
+            {
+                if (_City != value)
+                {
+                    _City = value;
+                }
+            }
+        }
+        private string _Country = "";
+        public string Country
+        {
+            get
+            {
+                return _Country;
+            }
+            set
+            {
+                if (_Country != value)
+                {
+                    _Country = value;
+                }
+            }
+        }
         #endregion
 
         private APIMygavolt.customers customer = null;
@@ -322,7 +400,7 @@ namespace Mygavolt.View.Manage.Customer.MainCustomer
         private void AddCustomerBase()
         {
             customers contact = new customers();
-
+            address_customers addre = new address_customers();
             int id_contact = 0;
             contact.lastname = _Lastname;
             contact.firstname = _Firstname;
@@ -330,11 +408,16 @@ namespace Mygavolt.View.Manage.Customer.MainCustomer
             contact.phone = _Phone;
             contact.email = _Email;
             contact.business_name = _BusinessName;
+            addre.street_name = _StreetName;
+            addre.street_number = _StreetNumber;
+            addre.zip_code = _ZipCode;
+            addre.city = _City;
+            addre.country = _Country;
 
 
             using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
             {
-                id_contact = api.SetCustomer(contact);
+                id_contact = api.SetCustomer(contact, addre);
             }
             if (id_contact > 0)
             {
@@ -344,6 +427,11 @@ namespace Mygavolt.View.Manage.Customer.MainCustomer
                 Phone = "";
                 Email = "";
                 BusinessName = "";
+                StreetName = "";
+                StreetNumber = "";
+                ZipCode = "";
+                City = "";
+                Country = "";
 
                 RaisePropertyChanged("Lastname");
                 RaisePropertyChanged("Firstname");
@@ -351,6 +439,11 @@ namespace Mygavolt.View.Manage.Customer.MainCustomer
                 RaisePropertyChanged("Phone");
                 RaisePropertyChanged("Email");
                 RaisePropertyChanged("BusinessName");
+                RaisePropertyChanged("StreetName");
+                RaisePropertyChanged("StreetNumber");
+                RaisePropertyChanged("ZipCode");
+                RaisePropertyChanged("City");
+                RaisePropertyChanged("Country");
             }
             RaisePropertyChanged("MyData");
         }

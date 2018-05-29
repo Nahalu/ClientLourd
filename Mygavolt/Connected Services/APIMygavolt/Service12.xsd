@@ -149,6 +149,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="c" nillable="true" type="q13:customers" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="ac" nillable="true" type="q14:address_customers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -162,7 +163,7 @@
   <xs:element name="SetDevice">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="d" nillable="true" type="q14:devices" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="d" nillable="true" type="q15:devices" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -176,7 +177,8 @@
   <xs:element name="SetEmployee">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="e" nillable="true" type="q15:employees" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="e" nillable="true" type="q16:employees" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="ae" nillable="true" type="q17:address_employees" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -190,7 +192,7 @@
   <xs:element name="SetIntervention">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="i" nillable="true" type="q16:interventions" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="i" nillable="true" type="q18:interventions" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -204,7 +206,7 @@
   <xs:element name="SetLocalization">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="l" nillable="true" type="q17:localizations" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="l" nillable="true" type="q19:localizations" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -218,7 +220,7 @@
   <xs:element name="SetMotive">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="m" nillable="true" type="q18:motives" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="m" nillable="true" type="q20:motives" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -232,7 +234,7 @@
   <xs:element name="SetRole">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="r" nillable="true" type="q19:roles" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="r" nillable="true" type="q21:roles" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -246,7 +248,7 @@
   <xs:element name="ModifyEmployee">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="e" nillable="true" type="q20:employees" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="e" nillable="true" type="q22:employees" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -260,7 +262,7 @@
   <xs:element name="ModifyDevice">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="d" nillable="true" type="q21:devices" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="d" nillable="true" type="q23:devices" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -274,7 +276,7 @@
   <xs:element name="ModifyCustomer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="c" nillable="true" type="q22:customers" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="c" nillable="true" type="q24:customers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -288,7 +290,7 @@
   <xs:element name="ModifyAddressCustomer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="a_c" nillable="true" type="q23:address_customers" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="a_c" nillable="true" type="q25:address_customers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -302,7 +304,7 @@
   <xs:element name="ModifyAddressEmployee">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="a_e" nillable="true" type="q24:address_employees" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="a_e" nillable="true" type="q26:address_employees" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -316,7 +318,7 @@
   <xs:element name="ModifyIntervention">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="i" nillable="true" type="q25:interventions" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="i" nillable="true" type="q27:interventions" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -330,7 +332,7 @@
   <xs:element name="ModifyLocalization">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="l" nillable="true" type="q26:localizations" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="l" nillable="true" type="q28:localizations" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -344,7 +346,7 @@
   <xs:element name="ModifyMotive">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="m" nillable="true" type="q27:motives" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="m" nillable="true" type="q29:motives" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -358,7 +360,7 @@
   <xs:element name="ModifyRole">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="r" nillable="true" type="q28:roles" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="r" nillable="true" type="q30:roles" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -372,7 +374,7 @@
   <xs:element name="DeleteEmploye">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="e" nillable="true" type="q29:employees" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="e" nillable="true" type="q31:employees" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -386,7 +388,7 @@
   <xs:element name="DeleteDevice">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="d" nillable="true" type="q30:devices" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="d" nillable="true" type="q32:devices" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -400,7 +402,7 @@
   <xs:element name="DeleteCustomer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="c" nillable="true" type="q31:customers" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="c" nillable="true" type="q33:customers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -414,7 +416,7 @@
   <xs:element name="DeleteAddressCustomer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="a_c" nillable="true" type="q32:address_customers" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="a_c" nillable="true" type="q34:address_customers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -428,7 +430,7 @@
   <xs:element name="DeleteMotive">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="m" nillable="true" type="q33:motives" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="m" nillable="true" type="q35:motives" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -442,7 +444,7 @@
   <xs:element name="DeleteRole">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="r" nillable="true" type="q34:roles" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="r" nillable="true" type="q36:roles" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
