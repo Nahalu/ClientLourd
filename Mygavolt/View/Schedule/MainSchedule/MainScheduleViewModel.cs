@@ -76,20 +76,19 @@ namespace Mygavolt.View.Schedule.MainSchedule
                 {
                     foreach (employees empl in listEmployees)
                     {
+                        //int count = new int();
+                        //while (inter.employee_id == empl.id)
+                        //{
+                        //    count++;
+                        //}
                         if (inter.employee_id == empl.id)
                         {
-                            //foreach (interventions interb in listInterventions)
-                            //{
-                            //    if (inter.employee_id == empl.id)
-                            //    {
-                            //        interventionsEmpl.Add(interb);
-                            //    }
-                            //}
+
                             Button x = new Button();
                             x.Height = 100;
                             x.Width = 90;
                             x.Background = new SolidColorBrush(Colors.BlueViolet);
-                            x.Content = empl.lastname;
+                            x.Content = empl.lastname /*+ count.ToString()*/;
                             x.Command = ShowInterventions;
                             listButton1.Add(x);
                         }

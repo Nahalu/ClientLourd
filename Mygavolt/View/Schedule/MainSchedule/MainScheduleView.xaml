@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mygavolt.View.Schedule.MainSchedule"
              xmlns:Filters="clr-namespace:Mygavolt.Filters"
-             mc:Ignorable="d" Height="626.8" Width="1052">
+             mc:Ignorable="d" Height="626.8" Width="1146.4">
     <Grid Margin="0,0,0.2,-0.2">
         <Grid Margin="63,0,365,0">
             <Grid.ColumnDefinitions>
@@ -39,7 +39,7 @@
             <ListBox Name="St7" ItemsSource="{Binding ListButton7}" Grid.Column="6" Grid.Row="1" Background="#FFCECECE"></ListBox>
 
         </Grid>
-        <DataGrid ItemsSource="{Binding ListInterventionss}" Margin="756,0,0,0">
+        <DataGrid ItemsSource="{Binding ListInterventionss}" Margin="843,0,10.2,31.4">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}"/>
                 <DataGridTextColumn Header="Date" Binding="{Binding date}"/>
@@ -49,8 +49,9 @@
                 <DataGridTextColumn Header="Adresse MAC" Binding="{Binding mac_adress}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Next" Command="{Binding NextWeek}" HorizontalAlignment="Left" Margin="708,10,0,0" VerticalAlignment="Top" Width="43" Height="84"/>
-        <Button Content="Previous" Command="{Binding PreviousWeek}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="43" Height="84"/>
+        <Button Content="►" Command="{Binding NextWeek}" HorizontalAlignment="Left" Margin="786,0,0,0" VerticalAlignment="Top" Width="43" Height="84"/>
+        <Button Content="◄" Command="{Binding PreviousWeek}" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" Width="43" Height="84"/>
+        <Button Content="Supprimer intervention" Margin="843,596,10.2,-0.6"></Button>
     </Grid>
 
 </UserControl>
