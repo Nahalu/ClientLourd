@@ -10,34 +10,13 @@ namespace Mygavolt.View.Affiliate.Intervention
 {
     public class InterventionViewModel : ObservableObject, IPageViewModel
     {
+        private string name;
+        public string Name { get => name; set => name = value; }
+
         public InterventionViewModel()
         {
         }
-        public string Name
-        {
-            get { return "Ajouter Intervention"; }
-        }
 
-
-        public static bool ReloadIntervention;
-        public static bool ReloadInterventionForfait;
-
-
-        private int _Role;
-        public int Role
-        {
-            get
-            {
-                return _Role;
-            }
-            set
-            {
-                if (_Role != value)
-                {
-                    _Role = value;
-                }
-            }
-        }
 
         private IList<employees> _Employees = null;
         public IList<employees> Employees
@@ -62,6 +41,123 @@ namespace Mygavolt.View.Affiliate.Intervention
             return listEmployee;
         }
 
+        private IList<motives> _Motives = null;
+        public IList<motives> Motives
+        {
+            get
+            {
+                if (_Motives == null)
+                {
+                    _Motives = ListMotives();
+                }
+                return _Motives;
+            }
+        }
+
+        private IList<motives> ListMotives()
+        {
+            IList<motives> listMotives = null;
+            using (APIMygavolt.Service1Client context = new APIMygavolt.Service1Client())
+            {
+                listMotives = context.GetMotives();
+            }
+            return listMotives;
+        }
+
+        private IList<customers> _ListCustomer = null;
+        public IList<customers> ListCustomer
+        {
+            get
+            {
+                if (_ListCustomer == null)
+                {
+                    _ListCustomer = ListCustomerBase();
+                }
+                return _ListCustomer;
+            }
+        }
+
+        private IList<customers> ListCustomerBase()
+        {
+            IList<customers> listCustomer = null;
+            using (APIMygavolt.Service1Client context = new APIMygavolt.Service1Client())
+            {
+                listCustomer = context.GetCustomers();
+            }
+            return listCustomer;
+        }
+
+        #region Properties Intervention
+        private DateTime _DateStart;
+        public DateTime DateStart
+        {
+            get
+            {
+                return _DateStart;
+            }
+            set
+            {
+                if (_DateStart != value)
+                {
+                    _DateStart = value;
+                }
+            }
+        }
+
+        private DateTime _DateEnd;
+        public DateTime DateEnd
+        {
+            get
+            {
+                return _DateEnd;
+            }
+            set
+            {
+                if (_DateEnd != value.Date)
+                {
+                    _DateEnd = value.Date;
+                }
+            }
+        }
+        private IList<employees> _Employee = null;
+        public IList<employees> Employee
+        {
+            get
+            {
+                if (_Employee == null)
+                {
+                    _Employee = ListEmployee();
+                }
+                return _Employee;
+            }
+        }
+        private IList<motives> _Motive = null;
+        public IList<motives> Motive
+        {
+            get
+            {
+                if (_Motive == null)
+                {
+                    _Motive = ListMotive();
+                }
+                return _Motive;
+            }
+        }
+
+        private customers selectedCustomer;
+        private customers customer = null;
+        public customers SelectedCustomer
+        {
+            get
+            {
+                return selectedCustomer;
+            }
+            set
+            {
+                selectedCustomer = value;
+            }
+        }
+
         private employees _SelectedEmployee = null;
         public employees SelectedEmployee
         {
@@ -69,7 +165,7 @@ namespace Mygavolt.View.Affiliate.Intervention
             {
                 if (_SelectedEmployee == null)
                 {
-                    _SelectedEmployee = _Employees[0];
+                    _SelectedEmployee = _Employee[0];
                 }
                 return _SelectedEmployee;
             }
@@ -81,256 +177,95 @@ namespace Mygavolt.View.Affiliate.Intervention
                 }
             }
         }
-
-        // Une liste de matériel provennant de la base 
-        private IList<devices> _DeviceBase;
-        private IList<devices> SearchDeviceBase()
-        {
-            IList<devices> devicesTMP = null;
-            using (APIMygavolt.Service1Client context = new APIMygavolt.Service1Client())
-            {
-                devicesTMP = context.GetDevices();
-            }
-            return devicesTMP;
-        }
-
-        // Une liste de matériel qui sera affiché comme produit choisisable 
-        public static bool ReloadDeviceIntervention;
-        private IList<devices> _RemainingDevice;
-        public IList<devices> RemainingDevice
+        private motives _SelectedMotive = null;
+        public motives SelectedMotive
         {
             get
             {
-                if (_RemainingDevice == null || ReloadDeviceIntervention)
+                if (_SelectedMotive == null)
                 {
-                    _DeviceBase = SearchDeviceBase();
-                    _RemainingDevice = _DeviceBase;
-                    ReloadDeviceIntervention = false;
+                    _SelectedMotive = _Motive[0];
                 }
-                return _RemainingDevice;
-            }
-        }
-
-        // Une liste d'employés provennant de la base 
-        private IList<employees> _EmployeeBase;
-        private IList<employees> SearchEmployeeBase()
-        {
-            IList<employees> employeesTMP = null;
-            using (APIMygavolt.Service1Client context = new APIMygavolt.Service1Client())
-            {
-                employeesTMP = context.GetEmployees();
-            }
-            return employeesTMP;
-        }
-
-        // Une liste d'employés qui sera affiché comme produit choisisable 
-        public static bool ReloadEmployeeIntervention;
-        private IList<employees> _RemainingEmployee;
-        public IList<employees> RemainingEmployee
-        {
-            get
-            {
-                if (_RemainingEmployee == null || ReloadEmployeeIntervention)
-                {
-                    _EmployeeBase = SearchEmployeeBase();
-                    _RemainingEmployee = _EmployeeBase;
-                    ReloadEmployeeIntervention = false;
-                }
-                return _RemainingEmployee;
-            }
-        }
-
-
-
-
-
-
-
-
-
-        private IList<devices> _ProduitAAjouter;
-        public devices ProduitAAjouter
-        {
-            get
-            {
-                return new devices();
+                return _SelectedMotive;
             }
             set
             {
-                if (_ProduitAAjouter == null)
-                    _ProduitAAjouter = new List<devices>();
-                if (value != null && value.id != null && value.id > 0)
+                if (_SelectedMotive != value)
                 {
-                    if (_ProduitAAjouter.Where(c => c.id == value.id).Count() == 0)
-                    {
-                        _ProduitAAjouter.Add(value);
-                    }
-                    value = null;
+                    _SelectedMotive = value;
                 }
             }
         }
+        #endregion
 
-
-        // une liste de produit a ajouter 
-        private IList<devices> _ProduitASupprimer;
-        public devices ProduitASupprimer
+        private IList<employees> ListEmployee()
         {
-            get
-            {
-                return new devices();
-            }
-            set
-            {
-                if (_ProduitASupprimer == null)
-                    _ProduitASupprimer = new List<devices>();
-                if (value != null && value.id != null && value.id > 0)
-                {
-                    if (_ProduitASupprimer.Where(c => c.id == value.id).Count() == 0)
-                    {
-                        _ProduitASupprimer.Add(value);
-                    }
-                    value = null;
-                }
-            }
-        }
-
-        // La liste des produit sélectionné
-        private IList<devices> _ProduitSelectionne;
-        public IList<devices> ProduitSelectionne
-        {
-            get
-            {
-                if (_ProduitSelectionne == null)
-                {
-                    _ProduitSelectionne = new List<devices>();
-
-                }
-                return _ProduitSelectionne;
-            }
-        }
-
-
-        private IList<employees> _EmployeSelectionne;
-        public IList<employees> EmployeSelectionne
-        {
-            get
-            {
-                if (_EmployeSelectionne == null)
-                {
-                    _EmployeSelectionne = new List<employees>();
-                    
-                }
-                return _EmployeSelectionne;
-            }
-        }
-
-
-
-
-
-
-        public ICommand _AjouterProduit;
-        public ICommand AjouterProduit
-        {
-            get
-            {
-                if (_AjouterProduit == null)
-                {
-                    _AjouterProduit = new RelayCommand(
-                        p => AjouterProduitTemporaire());
-                }
-
-                return _AjouterProduit;
-            }
-        }
-        private void AjouterProduitTemporaire()
-        {
-            if (_ProduitAAjouter != null && _ProduitAAjouter.Count > 0)
-            {
-                _ProduitSelectionne = _ProduitSelectionne.Union(_ProduitAAjouter).ToList();
-                _RemainingDevice = _DeviceBase.Except(_ProduitSelectionne).ToList();
-                RaisePropertyChanged("RemainingDevice");
-                RaisePropertyChanged("ProduitSelectionne");
-                _ProduitAAjouter.Clear();
-                RaisePropertyChanged("ProduitAAjouter");
-
-            }
-        }
-
-        public ICommand _SupprimerProduit;
-        public ICommand SupprimerProduit
-        {
-            get
-            {
-                if (_SupprimerProduit == null)
-                {
-                    _SupprimerProduit = new RelayCommand(
-                        p => SupprimerProduitTemporaire());
-                }
-
-                return _SupprimerProduit;
-            }
-        }
-
-        public void SupprimerProduitTemporaire()
-        {
-            _ProduitSelectionne = _ProduitSelectionne.Except(_ProduitASupprimer).ToList();
-            _RemainingDevice = _DeviceBase.Except(_ProduitSelectionne).ToList();
-
-            _ProduitASupprimer.Clear();
-            RaisePropertyChanged("RemainingDevice");
-            RaisePropertyChanged("ProduitSelectionne");
-            RaisePropertyChanged("ProduitASupprimer");
-
-        }
-
-
-        public ICommand _AjouterIntervention;
-        public ICommand AjouterIntervention
-        {
-            get
-            {
-                if (_AjouterIntervention == null)
-                {
-                    _AjouterIntervention = new RelayCommand(
-                        p => AjouterInterventionBase());
-                }
-
-                return _AjouterIntervention;
-            }
-        }
-
-        private void AjouterInterventionBase()
-        {
-            int codeErr = -1;
-            //  employees myIntervention = new employees();
-            employees myEmployee = SelectedEmployee;
-            
-           // myEmployee.device_id = _ProduitSelectionne.ToArray();
+            IList<employees> listeEmployee = null;
             using (APIMygavolt.Service1Client context = new APIMygavolt.Service1Client())
             {
-                codeErr = context.ModifyEmployee(myEmployee); // , _ProduitSelectionne.ToArray()
-
+                listeEmployee = context.GetEmployees();
             }
+            return listeEmployee;
 
-            if (codeErr > 0)
+        }
+
+        private IList<motives> ListMotive()
+        {
+            IList<motives> listeMotive = null;
+            using (APIMygavolt.Service1Client context = new APIMygavolt.Service1Client())
             {
-                // _Motive = "";
-                if (_ProduitSelectionne != null)
-                    _ProduitSelectionne.Clear();
-                if (_ProduitAAjouter != null)
-                    _ProduitAAjouter.Clear();
-                if (_ProduitASupprimer != null)
-                    _ProduitASupprimer.Clear();
-
-                RaisePropertyChanged("Motive");
-                RaisePropertyChanged("ProduitSelectionne");
-                RaisePropertyChanged("ProduitAAjouter");
-                RaisePropertyChanged("ProduitASupprimer");
-                ReloadIntervention = true;
-                ReloadInterventionForfait = true;
+                listeMotive = context.GetMotives();
             }
+            return listeMotive;
 
+        }
+
+        public ICommand _AddIntervention;
+        public ICommand AddIntervention
+        {
+            get
+            {
+                if (_AddIntervention == null)
+                {
+                    _AddIntervention = new RelayCommand(
+                        p => AddInterventionBase());
+                }
+
+                return _AddIntervention;
+            }
+        }
+
+
+        private void AddInterventionBase()
+        {
+            interventions inter = new interventions();
+
+            int id_inter = 0;
+            inter.customer_id = selectedCustomer.id;
+            inter.employee_id = _SelectedEmployee.id;
+            inter.motive_id = _SelectedMotive.id;
+            inter.dateStart = _DateStart;
+            inter.dateEnd = _DateEnd;
+
+
+            using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
+            {
+                id_inter = api.SetIntervention(inter);
+            }
+            if (id_inter > 0)
+            {
+                SelectedMotive = Motive[0];
+                SelectedEmployee = Employee[0];
+                DateStart = DateTime.Now;
+                DateEnd = DateTime.Now;
+
+
+                RaisePropertyChanged("SelectedMotive");
+                RaisePropertyChanged("SelectedEmployee");
+                RaisePropertyChanged("DateStart");
+                RaisePropertyChanged("DateEnd");
+            }
+            RaisePropertyChanged("ListCustomer");
         }
 
 

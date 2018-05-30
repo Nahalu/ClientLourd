@@ -4,9 +4,105 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mygavolt.View.Schedule.Planning"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             xmlns:ValidationRules="clr-namespace:Mygavolt.ValidationRules"
+             mc:Ignorable="d" Height="483.273" Width="409.316">
     <Grid>
-            
+
+        <Label Content="Sélectionner un employé :" HorizontalAlignment="Left" Margin="25,26,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6" Height="26" Width="147"/>
+        <ComboBox ItemsSource="{Binding Employee}" SelectedValue="{Binding SelectedEmployee}"  HorizontalAlignment="Left" Margin="177,26,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <!--<TextBlock Text="{Binding Path=id}"/>
+                            <TextBlock Text=" - "/>-->
+                        <TextBlock Text="{Binding Path=label}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Label Content="Type d'intervention :" HorizontalAlignment="Left" Margin="25,63,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6" Height="26" Width="147"/>
+        <ComboBox ItemsSource="{Binding Motive}" SelectedValue="{Binding SelectedMotive}"  HorizontalAlignment="Left" Margin="177,59,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <!--<TextBlock Text="{Binding Path=id}"/>
+                            <TextBlock Text=" - "/>-->
+                        <TextBlock Text="{Binding Path=label}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <DataGrid ItemsSource="{Binding ListCustomer}" SelectedItem="{Binding SelectedCustomer}" Margin="0,196,-0.4,32.2" IsSynchronizedWithCurrentItem="True" SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding label}" FontWeight="Bold"/>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nom" Binding="{Binding lastname}"/>
+                <DataGridTextColumn Header="Prénom" Binding="{Binding firstname}"/>
+                <!--<DataGridTextColumn Header="Version" Binding="{Binding version}"/>
+                <DataGridTextColumn Header="IMEI" Binding="{Binding imei}"/>
+                <DataGridTextColumn Header="Adresse MAC" Binding="{Binding mac_address}"/>-->
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Exemple : 2014-12-13 01:21:30" Margin="182,138,-0.4,317.2" Foreground="#FFB6B6B6"></Label>
+        <Label Content="Date début/fin :" HorizontalAlignment="Left" Margin="25,106,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6" Height="26" Width="147"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="148,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MaxLength="50" Width="97" TextAlignment="Center">
+            <TextBox.Text>
+                <Binding Path="DateStart" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="285,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MaxLength="50" Width="97" TextAlignment="Center">
+            <TextBox.Text>
+                <Binding Path="DateEnd" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <ValidationRules:NotNullOrEmptyValidationRule ValidationStep="RawProposedValue"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel>
+                        <!-- Placeholder for the TextBox itself -->
+                        <AdornedElementPlaceholder x:Name="textBox"/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Foreground="GreenYellow" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <Label Content="//" HorizontalAlignment="Left" Margin="254,112,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6" Height="26" Width="147"/>
+        <Label Content="Sélectionner le client :" HorizontalAlignment="Left" Margin="25,165,0,0" VerticalAlignment="Top" Foreground="#FFB6B6B6" Height="26" Width="147"/>
+        <Button Content="Valider" Command="{Binding AddIntervention}"  Margin="0,451,-0.4,0.2"></Button>
+        <Button FontSize="20" Content="X" Margin="350,6,5.6,434.2" Height="Auto" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Rectangle Stroke="#FF009688" StrokeThickness="5" />
     </Grid>
 </UserControl>

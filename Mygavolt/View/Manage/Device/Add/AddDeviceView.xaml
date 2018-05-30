@@ -5,16 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mygavolt.View.Manage.Device"
              xmlns:ValidationRules="clr-namespace:Mygavolt.ValidationRules"
-             mc:Ignorable="d" Height="193.689" Width="241.484">
+             mc:Ignorable="d" Height="315.77" Width="268.613">
     <!-- Pour ajouter un formulaire faire click droit sur Manage et ajouter controle utilisateur-->
     <Grid>
         <Label Content="Ajouter un matériel" HorizontalAlignment="Left" Margin="43,16,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="18" Foreground="#FFB6B6B6" Height="29" Width="168"/>
         <!-- Binder avec la fonction dans AddDeviceViewModel -->
-        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="150,151,0,0" VerticalAlignment="Top" Width="61" Command="{Binding AddDevice}" Height="18" />
+        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="86,276,0,0" VerticalAlignment="Top" Width="88" Command="{Binding AddDevice}" Height="30" />
 
         <!-- Binder chaque box avec son nom (voir dans AddDeviceViewModel)-->
-        <Label Content="Label" HorizontalAlignment="Left" Margin="44,44,0,0" VerticalAlignment="Top" Height="24" Width="31"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="13,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MaxLength="50" Width="97" TextAlignment="Center">
+        <Label Content="Label" HorizontalAlignment="Left" Foreground="AntiqueWhite" Margin="108,50,0,0" VerticalAlignment="Top" Height="24" Width="46"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="77,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MaxLength="50" Width="97" TextAlignment="Center">
             <TextBox.Text>
                 <Binding Path="Label" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -33,8 +33,8 @@
             </Validation.ErrorTemplate>
         </TextBox>
 
-        <Label Content="IMEI" HorizontalAlignment="Left" Margin="48,84,0,0" VerticalAlignment="Top" Height="24" Width="27"/>
-        <TextBox HorizontalAlignment="Left" Height="21" Margin="13,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" MaxLength="14" TextAlignment="Center">
+        <Label Content="IMEI" HorizontalAlignment="Left" Foreground="AntiqueWhite" Margin="112,90,0,0" VerticalAlignment="Top" Height="24" Width="42"/>
+        <TextBox HorizontalAlignment="Left" Height="21" Margin="77,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" MaxLength="14" TextAlignment="Center">
             <TextBox.Text>
                 <Binding Path="Imei" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -53,8 +53,8 @@
             </Validation.ErrorTemplate>
         </TextBox>
 
-        <Label Content="System" HorizontalAlignment="Left" Margin="44,128,0,0" VerticalAlignment="Top" Height="23" Width="39"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="13,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" MaxLength="10" TextAlignment="Center">
+        <Label Content="Système" HorizontalAlignment="Left" Foreground="AntiqueWhite" Margin="108,134,0,0" VerticalAlignment="Top" Height="23" Width="66"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="77,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" MaxLength="10" TextAlignment="Center">
             <TextBox.Text>
                 <Binding Path="System" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -73,8 +73,8 @@
             </Validation.ErrorTemplate>
         </TextBox>
 
-        <Label Content="Version" HorizontalAlignment="Left" Margin="159,50,0,0" VerticalAlignment="Top" Height="23" Width="39"/>
-        <TextBox HorizontalAlignment="Left" Height="21" Margin="128,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" MaxLength="10" TextAlignment="Center">
+        <Label Content="Version" HorizontalAlignment="Left" Foreground="AntiqueWhite" Margin="108,185,0,0" VerticalAlignment="Top" Height="34" Width="52"/>
+        <TextBox HorizontalAlignment="Left" Height="21" Margin="77,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" MaxLength="10" TextAlignment="Center">
             <TextBox.Text>
                 <Binding Path="Version" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -93,8 +93,8 @@
             </Validation.ErrorTemplate>
         </TextBox>
 
-        <Label Content="MAC Adresse" HorizontalAlignment="Left" Margin="145,86,0,0" VerticalAlignment="Top" Height="23" Width="66"/>
-        <TextBox HorizontalAlignment="Left" Height="21" Margin="128,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" MaxLength="19" TextAlignment="Center">
+        <Label Content="MAC Adresse" HorizontalAlignment="Left" Foreground="AntiqueWhite" Margin="94,224,0,0" VerticalAlignment="Top" Height="30" Width="80"/>
+        <TextBox HorizontalAlignment="Left" Height="21" Margin="77,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" MaxLength="19" TextAlignment="Center">
             <TextBox.Text>
                 <Binding Path="Mac_address" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>

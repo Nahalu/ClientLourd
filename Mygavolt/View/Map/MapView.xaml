@@ -9,9 +9,12 @@
     <Grid>
         <m:Map CredentialsProvider="AlxUxDzyNQUSo6z1wmTbghqdkI8_RKJwCuZv5kiBSwLBQk_tadFUhmXJ3ZIHwURT" Center="48.864716, 2.349014"
            ZoomLevel="6" Margin="0,0,416.2,-0.4">
-            <m:MapItemsControl ItemsSource="{Binding aListPushpin}">
-                <m:Pushpin Location="47.620574,-122.34942"/>
+            <m:MapItemsControl ItemsSource="{Binding ListPushpin}">
             </m:MapItemsControl>
         </m:Map>
+        <DataGrid Margin="572,37,0.2,272.6"></DataGrid>
+        <Button Content="Précédent" Margin="572,318,204.2,235.6"></Button>
+        <Button Content="Suivant" Margin="784,318,0.2,235.6"></Button>
+        <TextBlock Margin="572,3,0.2,548.6" Background="#FF9BBC8C"></TextBlock>
     </Grid>
 </UserControl>

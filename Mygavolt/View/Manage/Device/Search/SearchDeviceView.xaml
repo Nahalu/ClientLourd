@@ -39,18 +39,17 @@
             </DockPanel>
         </Expander>
 
-        <DataGrid ItemsSource="{Binding MyData}" SelectedItem="{Binding SelectedDevice}" Grid.Row="3" Margin="0,1,0,164" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" Grid.RowSpan="2">
+        <DataGrid CanUserAddRows="False" SelectionMode="Single" ItemsSource="{Binding MyData}" SelectedItem="{Binding SelectedDevice}" Grid.Row="3" Margin="0,1,0,164" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" Grid.RowSpan="2">
             <DataGrid.GroupStyle>
                 <GroupStyle>
                     <GroupStyle.HeaderTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding label}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding systm}" FontWeight="Bold" FontSize="22" Foreground="Aquamarine"/>
                         </DataTemplate>
                     </GroupStyle.HeaderTemplate>
                 </GroupStyle>
             </DataGrid.GroupStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding id}"/>
                 <DataGridTextColumn Header="Label" Binding="{Binding label}"/>
                 <DataGridTextColumn Header="Système" Binding="{Binding systm}"/>
                 <DataGridTextColumn Header="Version" Binding="{Binding version}"/>
@@ -67,7 +66,7 @@
             </StackPanel>
             <Button Command="{Binding DeleteDevice}" Content="Supprimer"/>
             <Button Command="{Binding ModifyDevice}" Content="Modifier"  />
-            <Border Margin="0,0,0,0" BorderBrush="Silver" Background="#8BC34A" BorderThickness="1" Padding="5">
+            <Border Margin="0,0,0,0" BorderBrush="Silver" Background="#FF768960" BorderThickness="1" Padding="5">
 
                 <!--Shows the currently selected item-->
                 <Grid>

@@ -40,18 +40,17 @@
             </DockPanel>
         </Expander>
 
-        <DataGrid ItemsSource="{Binding MyData}" SelectedItem="{Binding SelectedCustomer}" Grid.Row="3" Margin="0,1,0,164" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" Grid.RowSpan="2">
+        <DataGrid ItemsSource="{Binding MyData}" CanUserAddRows="False" SelectionMode="Single" SelectedItem="{Binding SelectedCustomer}" Grid.Row="3" Margin="0,1,0,164" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" Grid.RowSpan="2">
             <DataGrid.GroupStyle>
                 <GroupStyle>
                     <GroupStyle.HeaderTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding lastname}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding business_name}" FontWeight="Bold"/>
                         </DataTemplate>
                     </GroupStyle.HeaderTemplate>
                 </GroupStyle>
             </DataGrid.GroupStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding id}"/>
                 <DataGridTextColumn Header="Nom" Binding="{Binding lastname}"/>
                 <DataGridTextColumn Header="Prénom" Binding="{Binding firstname}"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding email}"/>
@@ -74,7 +73,7 @@
             </StackPanel>
             <Button Command="{Binding DeleteCustomer}" Content="Inactif"/>
             <Button Command="{Binding ModifyModify}" Content="Modifier"  />
-            <Border Margin="0,0,0,0"  BorderBrush="#8BC34A" BorderThickness="2" Background="#8BC34A"  Padding="5">
+            <Border Margin="0,0,0,0" BorderThickness="2" Background="#FF768960"  Padding="5" BorderBrush="#FF6F6F6F">
 
                 <!--Shows the currently selected item-->
                 <Grid>
@@ -94,10 +93,10 @@
                     <TextBlock Text="ID" Grid.Row="1"/>
                     <TextBlock Text="{Binding CurrentSelectedPerson.id}" Grid.Row="1" Grid.Column="1"/>
 
-                    <TextBlock Text="Label" Grid.Row="2"/>
+                    <TextBlock Text="Nom" Grid.Row="2"/>
                     <TextBlock Text="{Binding CurrentSelectedPerson.lastname}" Grid.Column="2" Grid.Row="2"/>
 
-                    <TextBlock Text="Version" Grid.Row="3"/>
+                    <TextBlock Text="Entreprise" Grid.Row="3"/>
                     <TextBlock Text="{Binding CurrentSelectedPerson.business_name}" Grid.Column="3" Grid.Row="3"/>
 
                 </Grid>

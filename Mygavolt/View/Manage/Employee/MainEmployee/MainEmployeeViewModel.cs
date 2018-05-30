@@ -21,6 +21,12 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
         private ObservableCollection<employees> myData;
 
 
+        public MainEmployeeViewModel()
+        {
+
+
+        }
+
         public IList<employees> MyData
         {
             get
@@ -41,38 +47,19 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
 
         private IList<employees> SearchEmployeesBase()
         {
+
             IList<employees> ListEmployees = null;
             using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
             {
                 {
                     ListEmployees = api.GetEmployees();
+
                 }
             }
             return ListEmployees;
         }
 
-        //private IList<SPS_EMPLOYEES_Result> SearchEmployeesBaseCombo()
-        //{
-        //    IList<SPS_EMPLOYEES_Result> ListEmployeesCombo = null;
-        //    using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
-        //    {
-        //        {
-        //            ListEmployeesCombo = api.GetEmployeesCombo();
-        //        }
-        //    }
-        //    return ListEmployeesCombo;
-        //}
-        
-        //private IList<SPS_EMPLOYEES_Result> _EmploCombo = null;
-        //public IList<SPS_EMPLOYEES_Result> EmploCombo
-        //{
-        //    get
-        //    {
-        //        _EmploCombo = SearchEmployeesBaseCombo();
 
-        //        return _EmploCombo;
-        //    }
-        //}
 
         #region Properties used for Filtering
         string searchText = String.Empty;
@@ -390,7 +377,7 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
         {
             get
             {
-                return _BirthDate = DateTime.Now.Date;
+                return _BirthDate;
             }
             set
             {
@@ -461,6 +448,26 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
             }
         }
 
+        private SPS_DEVICESNOAFFILIATION_Result _SelectedDevice = null;
+        public SPS_DEVICESNOAFFILIATION_Result SelectedDevice
+        {
+            get
+            {
+                if (_SelectedDevice == null)
+                {
+                    _SelectedDevice = _Devices[0];
+                }
+                return _SelectedDevice;
+            }
+            set
+            {
+                if (_SelectedDevice != value)
+                {
+                    _SelectedDevice = value;
+                }
+            }
+        }
+
         private IList<roles> ListRole()
         {
             IList<roles> listeRole = null;
@@ -485,11 +492,31 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
             }
         }
 
-        public MainEmployeeViewModel()
+        private IList<SPS_DEVICESNOAFFILIATION_Result> ListDevice()
         {
-            employe = new APIMygavolt.employees();
-            
+            IList<SPS_DEVICESNOAFFILIATION_Result> listeDevice = null;
+            using (APIMygavolt.Service1Client context = new APIMygavolt.Service1Client())
+            {
+                listeDevice = context.GetDevicesNoAffiliation();
+            }
+            return listeDevice;
+
         }
+
+        private IList<SPS_DEVICESNOAFFILIATION_Result> _Devices = null;
+        public IList<SPS_DEVICESNOAFFILIATION_Result> Devices
+        {
+            get
+            {
+                if (_Devices == null)
+                {
+                    _Devices = ListDevice();
+                }
+                return _Devices;
+            }
+        }
+
+
 
 
         public ICommand _AddEmployee;
@@ -535,8 +562,6 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
             }
         }
 
-
-
         private void AddEmployeeBase()
         {
 
@@ -549,14 +574,16 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
             contact.mobile = _Mobile;
             contact.email = _Email;
             contact.bank_account = _BankAccount;
-            contact.roles = _SelectedRole;
-            contact.birthdate = _BirthDate;
-            contact.arrival_date = _ArrivalDate;
+            contact.role_id = _SelectedRole.id;
+            contact.device_id = _SelectedDevice.id;
+            //contact.birthdate = _BirthDate.Date;
+            //contact.arrival_date = _ArrivalDate;
             ae.street_name = _StreetName;
             ae.street_number = _StreetNumber;
             ae.zip_code = _ZipCode;
             ae.city = _City;
             ae.country = _Country;
+
             using (APIMygavolt.Service1Client api = new APIMygavolt.Service1Client())
             {
                     id_contact = api.SetEmployee(contact, ae);
@@ -576,6 +603,7 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
                 City = "";
                 Country = "";
                 SelectedRole = Roles[0];
+                SelectedDevice = Devices[0];
                 ArrivalDate = DateTime.Now.AddYears(1);
                 BirthDate = DateTime.Now;
                 // Date_Fin_Validite = DateTime.Now.AddYears(1);
@@ -590,6 +618,7 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
                 RaisePropertyChanged("Phone");
                 RaisePropertyChanged("BankAccount");
                 RaisePropertyChanged("SelectedRole");
+                RaisePropertyChanged("SelectedDevice");
                 RaisePropertyChanged("StreetName");
                 RaisePropertyChanged("StreetNumber");
                 RaisePropertyChanged("City");
@@ -775,59 +804,7 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
             return listEmployee;
         }
 
-        //private SPS_EMPLOYEESACTIVE_Result _SelectedEmployeeD = null;
-        //public SPS_EMPLOYEESACTIVE_Result SelectedEmployeeD
-        //{
-        //    get
-        //    {
-        //        if (_SelectedEmployeeD == null)
-        //        {
-        //            _SelectedEmployeeD = _Employees[0];
-        //        }
-        //        return _SelectedEmployeeD;
-        //    }
-        //    set
-        //    {
-        //        if (_SelectedEmployeeD != value)
-        //        {
-        //            _SelectedEmployeeD = value;
-        //        }
-        //    }
-        //}
 
-        // Une liste de matériel provennant de la base 
-        private IList<devices> _DeviceBase;
-        private IList<devices> SearchDeviceBase()
-        {
-            IList<devices> devicesTMP = null;
-            devices deviceTMP = new devices();
-            deviceTMP.label = "";
-            deviceTMP.version = "";
-            using (APIMygavolt.Service1Client context = new APIMygavolt.Service1Client())
-            {
-                devicesTMP = context.GetDevices();
-            }
-            return devicesTMP;
-        }
-
-        // Une liste de matériel qui sera affiché comme produit choisisable 
-        public static bool ReloadDeviceIntervention;
-        private IList<devices> _RemainingDevice;
-        public IList<devices> RemainingDevice
-        {
-            get
-            {
-                if (_RemainingDevice == null || ReloadDeviceIntervention)
-                {
-                    _DeviceBase = SearchDeviceBase();
-                    _RemainingDevice = _DeviceBase;
-                    ReloadDeviceIntervention = false;
-                }
-                return _RemainingDevice;
-            }
-        }
-
-        // Une liste d'employés provennant de la base 
         private IList<SPS_EMPLOYEESACTIVE_Result> _EmployeeBase;
         private IList<SPS_EMPLOYEESACTIVE_Result> SearchEmployeeBase()
         {
@@ -844,167 +821,9 @@ namespace Mygavolt.View.Manage.Employee.MainEmployee
 
 
 
-        // Une liste d'employés qui sera affiché comme produit choisisable 
-        public static bool ReloadEmployeeIntervention;
-        private IList<SPS_EMPLOYEESACTIVE_Result> _RemainingEmployee;
-        public IList<SPS_EMPLOYEESACTIVE_Result> RemainingEmployee
-        {
-            get
-            {
-                if (_RemainingEmployee == null || ReloadEmployeeIntervention)
-                {
-                    _EmployeeBase = SearchEmployeeBase();
-                    _RemainingEmployee = _EmployeeBase;
-                    ReloadEmployeeIntervention = false;
-                }
-                return _RemainingEmployee;
-            }
-        }
 
 
 
-
-
-
-
-
-
-        private IList<devices> _ProduitAAjouter;
-        public devices ProduitAAjouter
-        {
-            get
-            {
-                return new devices();
-            }
-            set
-            {
-                if (_ProduitAAjouter == null)
-                    _ProduitAAjouter = new List<devices>();
-                if (value != null && value.id != null && value.id > 0)
-                {
-                    if (_ProduitAAjouter.Where(c => c.id == value.id).Count() == 0)
-                    {
-                        _ProduitAAjouter.Add(value);
-                    }
-                    value = null;
-                }
-            }
-        }
-
-
-        // une liste de produit a ajouter 
-        private IList<devices> _ProduitASupprimer;
-        public devices ProduitASupprimer
-        {
-            get
-            {
-                return new devices();
-            }
-            set
-            {
-                if (_ProduitASupprimer == null)
-                    _ProduitASupprimer = new List<devices>();
-                if (value != null && value.id != null && value.id > 0)
-                {
-                    if (_ProduitASupprimer.Where(c => c.id == value.id).Count() == 0)
-                    {
-                        _ProduitASupprimer.Add(value);
-                    }
-                    value = null;
-                }
-            }
-        }
-
-        // La liste des produit sélectionné
-        private IList<devices> _ProduitSelectionne;
-        public IList<devices> ProduitSelectionne
-        {
-            get
-            {
-                if (_ProduitSelectionne == null)
-                {
-                    _ProduitSelectionne = new List<devices>();
-
-                }
-                return _ProduitSelectionne;
-            }
-        }
-
-
-        private IList<employees> _EmployeSelectionne;
-        public IList<employees> EmployeSelectionne
-        {
-            get
-            {
-                if (_EmployeSelectionne == null)
-                {
-                    _EmployeSelectionne = new List<employees>();
-
-                }
-                return _EmployeSelectionne;
-            }
-        }
-
-
-
-
-
-
-        public ICommand _AjouterProduit;
-        public ICommand AjouterProduit
-        {
-            get
-            {
-                if (_AjouterProduit == null)
-                {
-                    _AjouterProduit = new RelayCommand(
-                        p => AjouterProduitTemporaire());
-                }
-
-                return _AjouterProduit;
-            }
-        }
-        private void AjouterProduitTemporaire()
-        {
-            if (_ProduitAAjouter != null && _ProduitAAjouter.Count > 0)
-            {
-                _ProduitSelectionne = _ProduitSelectionne.Union(_ProduitAAjouter).ToList();
-                _RemainingDevice = _DeviceBase.Except(_ProduitSelectionne).ToList();
-                RaisePropertyChanged("RemainingDevice");
-                RaisePropertyChanged("ProduitSelectionne");
-                _ProduitAAjouter.Clear();
-                RaisePropertyChanged("ProduitAAjouter");
-
-            }
-        }
-
-        public ICommand _SupprimerProduit;
-        public ICommand SupprimerProduit
-        {
-            get
-            {
-                if (_SupprimerProduit == null)
-                {
-                    _SupprimerProduit = new RelayCommand(
-                        p => SupprimerProduitTemporaire());
-                }
-
-                return _SupprimerProduit;
-            }
-        }
-
-
-        public void SupprimerProduitTemporaire()
-        {
-            _ProduitSelectionne = _ProduitSelectionne.Except(_ProduitASupprimer).ToList();
-            _RemainingDevice = _DeviceBase.Except(_ProduitSelectionne).ToList();
-
-            _ProduitASupprimer.Clear();
-            RaisePropertyChanged("RemainingDevice");
-            RaisePropertyChanged("ProduitSelectionne");
-            RaisePropertyChanged("ProduitASupprimer");
-
-        }
 
 
 

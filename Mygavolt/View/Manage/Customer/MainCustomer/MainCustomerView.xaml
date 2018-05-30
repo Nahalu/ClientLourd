@@ -31,7 +31,7 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-            <SearchCustomer:SearchCustomerView/>
+            <SearchCustomer:SearchCustomerView Margin="11,50,6.2,50"/>
         </Grid>
 
 

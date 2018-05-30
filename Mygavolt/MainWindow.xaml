@@ -94,7 +94,7 @@
                 <Button Height="63"  BorderBrush="{x:Null}" 
                     DataContext="{Binding Intervention}" 
                     Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" 
-                    CommandParameter="{Binding ''}" Content="Affiliation" FontFamily="Roboto" FontSize="14" Foreground="AliceBlue" Margin="-4,0,-5,0"
+                    CommandParameter="{Binding ''}" Content="Intervention" FontFamily="Roboto" FontSize="14" Foreground="AliceBlue" Margin="-4,0,-5,0"
                     />
 
                 <Button Height="63" BorderBrush="{x:Null}" 
